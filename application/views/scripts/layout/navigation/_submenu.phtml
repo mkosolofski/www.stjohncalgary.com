@@ -1,0 +1,17 @@
+<dt><?php echo $this->menu()->htmlify($this->page);?></dt>
+<?php if (!empty($this->page->pages)) : ?>
+    <dd>
+        <dl style="display:none;" id="<?php echo $this->id;?>">
+        <?php 
+            $submenuCounter = 0;
+            foreach ($this->page->pages as $subPage) :
+                echo $this->partial(
+                    'layout/navigation/_submenu.phtml',
+                    null,
+                    array('page' => $subPage, 'id' => $this->id . '_' . $submenuCounter)
+                );
+                $submenuCounter++;
+            endforeach;?>
+        </dl>
+    </dd>
+<?php endif;?>

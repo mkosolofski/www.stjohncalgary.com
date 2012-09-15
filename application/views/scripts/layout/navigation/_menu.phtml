@@ -1,0 +1,24 @@
+<?php
+    $topItemCounter = 0;
+    foreach ($this->container as $page) :?>
+    <div>
+        <a href="<?php echo $page->getHref();?>" class="navTopItem"><?php echo $page->getLabel();?></a>
+        <?php if (!empty($page->pages)) :?>
+            <dl style="display:none;" id="navSubmenu<?php echo $topItemCounter;?>">
+            <?php
+                $submenuCounter = 0;
+                foreach ($page->pages as $subPage) :
+                    echo $this->partial(
+                        'layout/navigation/_submenu.phtml',
+                        null,
+                        array('page' => $subPage, 'id' => 'navSubmenu' . $topItemCounter . '_' . $submenuCounter)
+                    );
+                    $submenuCounter++;
+                endforeach;?>
+            </dl>        
+        <?php endif;?>
+    </div>
+<?php
+        $topItemCounter++;
+    endforeach;
+?>

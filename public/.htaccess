@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^css([^0-9]*)[0-9]+(.*)$ css$1$2 [N,NC,L]
+RewriteRule ^js([^0-9]*)[0-9]+(.*)$ js$1$2 [N,NC,L]
+RewriteRule ^images([^0-9]*)[0-9]+(.*)$ images$1$2 [N,NC,L]
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

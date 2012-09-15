@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #a0a6ca  url('/images/layout/background.jpg') fixed no-repeat center;
+    background-size: 96% 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 785px;
+}
+iframe {
+
+}
+
+textarea {
+   
+   
+}
