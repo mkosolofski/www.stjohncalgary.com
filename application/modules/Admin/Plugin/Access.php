@@ -10,7 +10,6 @@ namespace Admin\Plugin;
  */
 
 class Access extends \Zend_Controller_Plugin_Abstract
-
 {
     /**
      * Called after Zend_Controller_Front exits from the router.
@@ -23,10 +22,16 @@ class Access extends \Zend_Controller_Plugin_Abstract
         if (strtolower($request->getModuleName()) !== 'admin') {
             return;
         }
+        
+        $user = new \Website\User();
+        $userEmail = $user->getCurrentUser()->email;
+
+        if (\Zend_Registry::getInstance()->acl->isAllowed($userEmail, \Website\Acl::RESOURCE_ADMIN_MODULE) == false) {
+            \Zend_Controller_Action_HelperBroker::getStaticHelper('redirector')->gotourl('/');
+            return;
+        }
 
         $request->setModuleName('Admin');
-
-        // Add code here to see if the user is logged in.
 
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');

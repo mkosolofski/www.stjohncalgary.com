@@ -1,0 +1,16 @@
+.registerFormErrorMessage, .registerFormFieldMessage {
+    color: #E01B1B;
+    font-size: 80%;
+    font-weight: bold;
+}
+.registerFormFieldMessage {
+    position: absolute;
+    text-align: left;
+}
+#registerForm label {
+    display: block;
+    font-weight: bold;
+}
+#registerForm input {
+    margin-bottom: 5px;
+}

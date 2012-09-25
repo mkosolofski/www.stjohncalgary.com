@@ -24,17 +24,32 @@ class User extends Abstrct
     /**
      * @Column(type="string",nullable=false,length=50) 
      */
-    protected $username;
+    protected $email;
 
     /**
      * @Column(type="string",nullable=false,length=32) 
      */
     protected $password;
+    
+    /**
+     * @Column(type="integer",nullable=false,length=4) 
+     */
+    protected $role;
+
+    /**
+     * @Column(type="datetime",nullable=false)
+     */
+    protected $created;
+
+    /**
+     * @Column(type="datetime") 
+     */
+    protected $last_updated;
 
     /**
      * Fields that can be set in the model. 
      * 
      * @var array
      */
-    protected $_setableFields = array('username', 'password');
+    protected $_setableFields = array('email', 'password', 'role', 'created');
 }
