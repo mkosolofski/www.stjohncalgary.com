@@ -69,9 +69,11 @@ class User
             throw new \Website\Exception('A user is already registered with this email.');
         }
 
+        $passwordTool = new \Website\Password();
+
         $userModel = new \Model\User();
         $userModel->email = $email;
-        $userModel->password = $password;
+        $userModel->password = $passwordTool->encrypt($password);
         $userModel->role = \Website\Acl::ROLE_MEMBER; 
         $userModel->created = new \DateTime();
         \Zend_Registry::getInstance()->entityManager->persist($userModel);
@@ -97,14 +99,13 @@ class User
         }
 
         $userModel = \Zend_Registry::getInstance()->entityManager
-            ->getRepository('\Model\User')->findOneBy(
-                array(
-                    'email' => $email,
-                    'password' => $password
-                )
-            );
-        
+            ->getRepository('\Model\User')->findOneBy(array( 'email' => $email));
         if (is_null($userModel)) {
+            return false;
+        }
+
+        $passwordTool = new \Website\Password();
+        if ($passwordTool->isEqual($password, $userModel->password) == false) {
             return false;
         }
 

@@ -7,11 +7,45 @@ html, body {
     background-size: 96% 100%;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 785px;
+    font-size: 16px;
 }
 
 header {
     z-index: 2;
     position: relative;
+}
+
+/********************
+ * Log In
+ *******************/
+.login {
+    float: right;
+    width: 357px;
+    height: 25px;
+    margin-top: -41px;
+    padding: 3px 0 0 2px;
+    -moz-border-bottom-left-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px; /* future proofing */
+    -khtml-border-bottom-left-radius: 7px; /* for old Konqueror browsers */
+    -moz-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    border-bottom-right-radius: 7px; /* future proofing */
+    -khtml-border-bottom-right-radius: 7px; /* for old Konqueror browsers */
+    background-color: #E2E4EE;
+    border: #6e7cc4 1px solid;
+    font-size: 0.70em;
+}
+
+.login input {
+    width: 90px;
+    height: 15px;
+}
+
+.login input[type="button"] {
+    height: 20px;
+    width: 50px;
+    line-height: 0;
 }
 
 /********************
