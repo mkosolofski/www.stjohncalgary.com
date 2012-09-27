@@ -7,7 +7,7 @@
             '<div style="text-align:center;">' +
                 '<h1>Login Failed</h1>' +
                 '<br/>' +
-                '<?php echo $response['message'];?>' +
+                '<?php echo str_replace("'", "\'", $response['message'])?>' +
                 '<br/><br/>' +
                 '<input type="button" onclick="layout_popup.hide();" value="Close"/>' +
             '</div>'
