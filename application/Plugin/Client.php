@@ -24,6 +24,8 @@ class Client extends \Zend_Controller_Plugin_Abstract
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');
         $view->headScript()->appendFile('/js/layout/nav.js');
+        $view->headScript()->appendFile('/js/layout/popup.js');
+        $view->headScript()->appendFile('/js/layout/user.js');
         $view->headLink()->appendStylesheet('/css/master.css');
 
         $navigation = new \Zend_Navigation(
@@ -34,5 +36,12 @@ class Client extends \Zend_Controller_Plugin_Abstract
 
         $view->navigation($navigation);
         $view->navigation()->menu()->setPartial(array('layout/navigation/_menu.phtml', 'default'));
+
+        $user = new \Website\User();
+        if ($user->isLoggedIn()) {
+            $view->user = $user->getCurrentUser();
+        } else {
+            $view->loginForm = new \Website\Form\Login();
+        }
     }
 }

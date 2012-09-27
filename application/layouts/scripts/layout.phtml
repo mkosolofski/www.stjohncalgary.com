@@ -17,18 +17,16 @@
         </script>
     </head>
     <body>
+        <div id="popupMask" style="display:none;"></div>
+        <div id="popupContainer" style="display:none;"><div id="popupContent"></div></div>
+        
         <div class="layout">
             <header>
                 <img src="/images/layout/logo.png"/>
                 <nav>
                     <?php echo $this->navigation()->menu();?>
                 </nav>
-                <div class="login">
-                    Username <input type="text" value=""/>
-                    Password <input type="password" value=""/>
-                    <input type="button" value="login"/>
-                    <a href="/register" style="display:block;float:right;margin-top:3px">Register Here</a>
-                </div>
+                <?php echo $this->render('layout/_usertoolbar.phtml');?>
             </header>
             <div class="content">
                 <?php echo $this->layout()->content;?>

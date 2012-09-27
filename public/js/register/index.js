@@ -28,10 +28,7 @@ var Form_Register = {
                                 }
                             }
                         }
-                    ).done(function(response){
-                    
-                    eval(response);
-                    });
+                    ).done(function(response){eval(response);});
                 }
             }
         );

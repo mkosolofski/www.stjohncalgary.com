@@ -23,25 +23,26 @@ class User
     public function logIn($email, $password)
     {
         $response = new Response(); 
+        $messages = array();
+        $emailValidator = new \Zend_Validate_EmailAddress();
 
         if (!is_string($email) || empty($email)) {
-            return $response->setMessage('Invalid email address.')
-                ->setResult(false);
+            $messages[] = 'Invalid email address.';
+        } else if (!$emailValidator->isValid($email)) {
+            $messages[] = 'Invalid email address.';
         }
 
         if (!is_string($password) || empty($password)) {
-            return $response->setMessage('Invalid password.')
-                ->setResult(false);
+            $messages[] = 'Invalid password.';
         }
 
-        $emailValidator = new \Zend_Validate_EmailAddress();
-        if (!$emailValidator->isValid($email)) {
-            return $response->setMessage('Invalid email address.')->setResult(false); 
+        if (!empty($messages)) {
+            return $response->setMessage(implode(' ', $messages))->setResult(false); 
         }
 
         $user = new \Website\User();
         if ($user->setCurrentUser($email, $password) == false) {
-            return $response->setMessage('Invalid log in.')->setResult(false); 
+            return $response->setMessage('Given email/password combo not found.')->setResult(false); 
         }
 
         return $response->setResult(true);

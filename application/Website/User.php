@@ -133,4 +133,14 @@ class User
     {
         return new \Zend_Session_Namespace(self::SESSION_NAMESPACE);
     }
+
+    /**
+     * Returns if the user is logged in.
+     * 
+     * @return boolean True if user is logged in, false otherwise.
+     */
+    public function isLoggedIn()
+    {
+        return isset($this->getCurrentUser()->email);
+    }
 }
