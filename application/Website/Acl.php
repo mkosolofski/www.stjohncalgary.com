@@ -18,6 +18,7 @@ class Acl
     /**#@+
      * The site acl roles.
      */
+    const ROLE_GUEST = 0;
     const ROLE_MEMBER = 1;
     const ROLE_ADMIN = 2;
     /**#@-*/
@@ -28,6 +29,18 @@ class Acl
     const RESOURCE_ADMIN_MODULE = 'adminModule';
     /**#@-*/
 
+    protected $_configuration = array(
+        self::ROLE_GUEST => array(
+            ':register:index'
+        ),
+        self::ROLE_MEMBER => array(
+            ':register:welcome'
+        ),
+        self::ROLE_ADMIN => array(
+            'admin:*:*'
+        )
+    );
+
     /**
      * Builds and returns the site acl based on the current user.
      * 
@@ -36,12 +49,17 @@ class Acl
     public function getAcl()
     {
         $acl = new \Zend_Acl();
-        $acl->addRole(new \Zend_Acl_Role(self::ROLE_MEMBER))
-            ->addRole(new \Zend_Acl_Role(self::ROLE_ADMIN))
-            ->addResource(new \Zend_Acl_Resource(self::RESOURCE_ADMIN_MODULE))
-            ->allow(self::ROLE_ADMIN, self::RESOURCE_ADMIN_MODULE);
 
-        // Set up the acl for the currently logged in user.
+        // Build the acl.
+        foreach ($this->_configuration as $role => $roleConfig) {
+            $acl->addRole(new \Zend_Acl_Role($role));
+            foreach ($roleConfig as $resource) {
+                $acl->addResource(new \Zend_Acl_Resource($resource));
+                $acl->allow($role, $resource);
+            }
+        }
+
+        // Place the user in the acl.
         $user = new \Website\User();
         $userEmail = $user->getCurrentUser()->email;
          
@@ -49,8 +67,10 @@ class Acl
             $userModel = \Zend_Registry::getInstance()->entityManager
                 ->getRepository('\Model\User')->findOneBy(array('email' => $userEmail));
             if (!is_null($userModel)) {
-                $acl->addRole(new \Zend_Acl_Role($userModel->email), array($userModel->role));
+                $acl->addRole(new \Zend_Acl_Role($userModel->email), $userModel->role);
             }
+        } else {
+            $acl->addRole(new \Zend_Acl_Role(''), self::ROLE_GUEST);
         }
 
         return $acl;

@@ -22,14 +22,6 @@ class Access extends \Zend_Controller_Plugin_Abstract
         if (strtolower($request->getModuleName()) !== 'admin') {
             return;
         }
-        
-        $user = new \Website\User();
-        $userEmail = $user->getCurrentUser()->email;
-
-        if (\Zend_Registry::getInstance()->acl->isAllowed($userEmail, \Website\Acl::RESOURCE_ADMIN_MODULE) == false) {
-            \Zend_Controller_Action_HelperBroker::getStaticHelper('redirector')->gotourl('/');
-            return;
-        }
 
         $request->setModuleName('Admin');
 
