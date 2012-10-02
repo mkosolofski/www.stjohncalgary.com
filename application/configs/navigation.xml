@@ -4,63 +4,107 @@
         <home>
             <label>Home</label>
             <uri>/</uri>
+            <partials>
+                <file>Home - _announcements.phtml</file>
+                <file>Home - _services.phtml</file>
+            </partials>
         </home>
         <services>
             <label>Services</label>
-            <uri>/</uri>
+            <uri>/</uri>            
+            <partials>
+                <file>Services - services.phtml</file>
+            </partials>
             <pages>
                 <wedding>
                     <label>Wedding</label>
                     <uri>/</uri>
+                    <partials>
+                        <file>Wedding - wedding.phtml</file>
+                    </partials>
                     <pages>
                         <prices>
                             <label>Prices</label>
                             <uri>/</uri>
+                            <partials>
+                                <file>Prices - prices.phtml</file>
+                            </partials>
                             <pages>
                                 <good>
                                     <label>Good</label>
                                     <uri>/</uri>
+                                    <partials>
+                                        <file>Good - good.phtml</file>
+                                    </partials>
                                 </good>
                                 <crappy>
                                     <label>Crappy</label>
                                     <uri>/</uri>
+                                    <partials>
+                                        <file>Crappy - crappy.phtml</file>
+                                    </partials>
                                 </crappy>
                             </pages>
                         </prices>
                         <donation>
                             <label>Donation</label>
                             <uri>/</uri>
+                            <partials>
+                                <file>Donation - donation.phtml</file>
+                            </partials>
                         </donation>
                         <clothing>
                             <label>Clothing</label>
                             <uri>/</uri>
+                            <partials>
+                                <file>Clothing - clothing.phtml</file>
+                            </partials>
                         </clothing>
                         <flowers>
                             <label>Flowers</label>
                             <uri>/</uri>
+                            <partials>
+                                <file>Flowers - flowers.phtml</file>
+                            </partials>
                         </flowers>
                     </pages>
                 </wedding>
                 <funeral>
                     <label>Funeral</label>
                     <uri>/</uri>
+                    <partials>
+                        <file>Funeral - funeral.phtml</file>
+                    </partials>
                 </funeral>
                 <baptism>
                     <label>Baptism</label>
                     <uri>/</uri>
+                    <partials>
+                        <file>Baptism - past.phtml</file>
+                        <file>Baptism - future.phtml</file>
+                    </partials>
                 </baptism>
             </pages>
         </services>
         <calendar>
             <label>Calendar</label>
+            <partials>
+                <file>Calendar - calendar.phtml</file>
+           </partials>
             <uri>/</uri>
         </calendar>
         <news>
             <label>News</label>
+            <partials>
+                <file>News - news.phtml</file>
+            </partials>
             <uri>/</uri>
         </news>
         <donate>
             <label>Donate</label>
+            <partials>
+                <file>Donate - donate.phtml</file>
+            </partials>
             <uri>/</uri>
         </donate>
     </nav>
