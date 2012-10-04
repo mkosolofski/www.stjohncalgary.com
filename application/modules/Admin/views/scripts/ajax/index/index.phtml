@@ -1,0 +1,8 @@
+<?php
+//returns the html from the partial to js/admn/index.js
+
+   $path = $this->params['file'];
+   $contents = $this->partial('mainScripts/index/'.$path);
+   echo $contents;
+   
+?>
