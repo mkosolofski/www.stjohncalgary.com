@@ -10,7 +10,6 @@ namespace Admin\Plugin;
  */
 
 class Access extends \Zend_Controller_Plugin_Abstract
-
 {
     /**
      * Called after Zend_Controller_Front exits from the router.
@@ -25,8 +24,6 @@ class Access extends \Zend_Controller_Plugin_Abstract
         }
 
         $request->setModuleName('Admin');
-
-        // Add code here to see if the user is logged in.
 
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');

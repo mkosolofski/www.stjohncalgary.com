@@ -44,16 +44,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
 
     /**
-     * Bootstrap all plugins.
-     */
-    protected function _initPlugins()
-    {
-        Zend_Controller_Front::getInstance()
-            ->registerPlugin(new \Plugin\Doctrine())
-            ->registerPlugin(new \Plugin\Client());
-    }
-
-    /**
      * Bootstrap doctrine.
      */
     protected function _initDoctrine()
@@ -97,9 +87,26 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
 
-        // push the entity manager into our registry for later use
-        $registry = Zend_Registry::getInstance()->entityManager = $entityManager;
+        // Push the entity manager into our registry for later use
+        Zend_Registry::getInstance()->entityManager = $entityManager;
+    }
 
-        return $entityManager;
+    /**
+     * Bootstrap the acl for the current user.
+     */
+    protected function _initAcl()
+    {
+        $acl = new \Website\Acl(); 
+        Zend_Registry::getInstance()->acl = $acl->getAcl();
+    }
+
+    /**
+     * Bootstrap all plugins.
+     */
+    protected function _initPlugins()
+    {
+        Zend_Controller_Front::getInstance()
+            ->registerPlugin(new \Plugin\Client())
+            ->registerPlugin(new \Plugin\Access());
     }
 }

@@ -1,0 +1,14 @@
+<?php
+    $userService = new \Service\User();
+    $response = $userService->register($this->params['email'], $this->params['password'])->get();
+    if ($response['result'] === false) {
+?>
+        $('#errorMessage').html('<?php echo str_replace("'", "\'", $response['message'])?>');
+<?php
+    } else {
+        $userService->login($this->params['email'], $this->params['password']);
+?>
+        window.location = '/register/welcome'; 
+<?php
+    }
+?>

@@ -1,0 +1,21 @@
+<?php
+    $user = new \Service\User();
+    $response = $user->logIn($this->params['email'], $this->params['password'])->get();
+    if ($response['result'] == false) {
+?>
+        layout_popup.show(
+            '<div style="text-align:center;">' +
+                '<h1>Login Failed</h1>' +
+                '<br/>' +
+                '<?php echo str_replace("'", "\'", $response['message'])?>' +
+                '<br/><br/>' +
+                '<input type="button" onclick="layout_popup.hide();" value="Close"/>' +
+            '</div>'
+        );
+<?php
+    } else {
+?>
+        window.location = '/';
+<?php
+    }
+?>
