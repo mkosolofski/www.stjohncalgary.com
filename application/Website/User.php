@@ -17,7 +17,7 @@ class User
      * User session configuration.
      */
     const SESSION_NAMESPACE = 'user';
-    const SESSION_EXPIRATION = 7200;
+    const SESSION_EXPIRATION = 14400;
     /**#@-*/
 
     /**#@+

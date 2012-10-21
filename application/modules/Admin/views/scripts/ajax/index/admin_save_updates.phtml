@@ -1,0 +1,22 @@
+<?php
+//saves the contents of the admin text area to a file
+
+   $html = $this->params['html'];
+   $fileToUpdate = $this->params['file'];
+   $newFile = APPLICATION_PATH.'/views/scripts/index/'.$fileToUpdate.'r';
+   $oldFile = APPLICATION_PATH.'/views/scripts/index/'.$fileToUpdate;
+   
+   //get the contents of the old file so it can be save to a revert file
+   $contents = file_get_contents($oldFile);
+   
+   $writeToRevertFile = fopen($newFile, "w+");
+   fwrite($writeToRevertFile, $contents);
+   fclose($writeToRevertFile);
+   
+   //after the revert file is saved replace the contents of the old file
+    
+   $SaveFile = fopen($oldFile, "w+");
+   fwrite($SaveFile, $html);
+   fclose($SaveFile);
+   
+?>
