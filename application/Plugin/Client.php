@@ -24,8 +24,6 @@ class Client extends \Zend_Controller_Plugin_Abstract
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');
         $view->headScript()->appendFile('/js/layout/nav.js');
-        $view->headScript()->appendFile('/js/layout/popup.js');
-        $view->headScript()->appendFile('/js/layout/user.js');
         $view->headLink()->appendStylesheet('/css/master.css');
 
         $navigation = new \Zend_Navigation(

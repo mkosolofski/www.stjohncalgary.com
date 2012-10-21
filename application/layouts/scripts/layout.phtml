@@ -6,27 +6,26 @@
         <?php echo $this->headLink();?>
         <?php echo $this->headScript();?>
         <script type="text/javascript">
-            $(document).ready(
-                function () {
-                    var offset = $('.content').height() + 40;
-                    $('.layoutBackground')
-                        .height(offset)
-                        .css('top', '-' + offset + 'px');
-                }
-            );
+            function resizeLayout()
+            {
+                var offset = $('.content').height() + 145;
+                $('.layoutBackground')
+                    .height(offset)
+                    .css('top', '-' + offset + 'px');
+            }
+            $(document).ready(resizeLayout);
+            $(window).resize(resizeLayout);
         </script>
     </head>
     <body>
         <div id="popupMask" style="display:none;"></div>
         <div id="popupContainer" style="display:none;"><div id="popupContent"></div></div>
-        
         <div class="layout">
             <header>
                 <img src="/images/layout/logo.png"/>
                 <nav>
                     <?php echo $this->navigation()->menu();?>
                 </nav>
-                <?php echo $this->render('layout/_usertoolbar.phtml');?>
             </header>
             <div class="content">
                 <?php echo $this->layout()->content;?>

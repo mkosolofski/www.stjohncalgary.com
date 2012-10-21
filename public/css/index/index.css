@@ -1,0 +1,93 @@
+.columnA {
+    position: absolute;
+    width: 160px;
+}
+.columnB {margin-left: 168px}
+
+/* Worship Time and Events */
+.worshipTime img, .events img {
+     position: absolute;
+     top: -18px;
+     left: 4px;
+}
+
+.worshipTime, .events {
+    position: relative;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+    padding: 15px 5px 5px 5px;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    box-shadow: inset 0 0 10px #6E7CC4;
+}
+
+.events {margin-top: 23px}
+
+.eventDate {
+    font-size:.9em;
+    font-weight:bold;
+}
+
+.eventDivider {
+    width:80%;#D3DBF2
+    border-bottom:1px dashed #000;
+    margin:4px 0 4px 10%;
+}
+
+.worshipTime {
+    margin-top: 15px;
+    background-image: url('/images/index/index/worship_time/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px 100px;
+}
+
+/* News */
+.news img {margin-top: 10px}
+
+.news article {
+    border-bottom: 1px solid #6E7CC4;
+    margin-bottom: 6px;
+}
+
+.news h1 {font-size: 1.0em}
+.news h1 div {
+    font-size: .9em;
+    padding-bottom: 1px;
+}
+
+.news p {margin: 6px 0 8px 0}
+
+/* Slideshow */
+#slides {
+    float: right;
+    text-align: center;
+}
+#slides a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #404D91;
+    font-weight: bold;
+}
+.slides_container {
+    width: 260px;
+    height: 200px;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+}
+.slides_container img {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    -khtml-border-radius: 5px;
+
+}
+.slides_container div {
+    width: 260px;
+    height: 200px;
+    display: block;
+}

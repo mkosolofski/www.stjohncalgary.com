@@ -16,11 +16,6 @@ h1 {
     font-size: 1.4em;
 }
 
-header {
-    z-index: 2;
-    position: relative;
-}
-
 /********************
  * Log In Form
  *******************/
@@ -155,13 +150,17 @@ nav dd dl {
 
 .content {
     font-size: 0.80em;
-    overflow: auto;
-    width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .content, .layoutBackground {
-    padding: 0 5px 10px 5px;
+    margin-top: 90px;
+    padding: 5px 10px 10px 10px;
+}
+
+header {
+    position:relative;
+    z-index: 2;
 }
 
 header img {

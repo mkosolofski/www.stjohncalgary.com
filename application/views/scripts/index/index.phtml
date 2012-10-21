@@ -1,17 +1,46 @@
-dadasdada
-<br/>
-asdasdasdadasdasd ddadasd asd asd asdasdasd asdas d as das d asd as d asd as dasdasdasdasdasdasdkjashdjash
-<br/>
-dasd
-</br>
-dasdasdasdasdasdasdasdasd
-asdasdas
-das
-da
-sd
-asd
-a
-sd
-asda
-sdas
-dasdasdas
+<div>
+    <div>
+        <div class="columnA">
+            <div>
+                <div class="worshipTime"> 
+                    <img src="/images/index/index/worship_time.png"/>
+                    <div>
+                        <?echo $this->partial('index/_worshiptime.phtml');?>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="events"> 
+                    <img src="/images/index/index/events.png"/>
+                    <div>
+                        <div style="height:200px;overflow-y:scroll;">
+                            <?echo $this->partial('index/_events.phtml');?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columnB">
+            <div style="text-align:center;margin-bottom:15px;">
+                <img src="/images/index/index/welcome_to_st_john.png"/>
+            </div>
+            <div id="slides">
+                <div class="slides_container">
+                    <div>
+                        <img src="/images/index/index/slideshow/a.jpg">
+                    </div>
+                    <div>
+                        <img src="/images/index/index/slideshow/b.jpg">
+                    </div>
+                </div>
+            </div>
+            <?echo $this->partial('index/_welcome.phtml');?>
+            <section class="news">
+                <img src="/images/index/index/news.png"/>
+                <div>
+                    <?echo $this->partial('index/_news.phtml');?>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
