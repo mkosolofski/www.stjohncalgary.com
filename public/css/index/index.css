@@ -22,8 +22,6 @@
     box-shadow: inset 0 0 10px #6E7CC4;
 }
 
-.contact {margin-bottom: 10px}
-
 .events, .keepInTouch, .contact {margin-top: 23px}
 
 .eventDate {
@@ -49,7 +47,7 @@
 .news img {margin-top: 10px}
 
 .news article {
-    border-bottom: 1px solid #6E7CC4;
+    border-bottom: 1px dotted #6E7CC4;
     margin-bottom: 6px;
 }
 
