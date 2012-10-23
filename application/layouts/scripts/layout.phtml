@@ -8,18 +8,15 @@
         <script type="text/javascript">
             function resizeLayout()
             {
-                var offset = $('.content').height() + 145;
                 $('.layoutBackground')
-                    .height(offset)
-                    .css('top', '-' + offset + 'px');
+                    .width($('.content')[0].clientWidth - 2)
+                    .height($('.content')[0].scrollHeight + 40);
             }
-            $(document).ready(resizeLayout);
+            $(window).load(resizeLayout);
             $(window).resize(resizeLayout);
         </script>
     </head>
     <body>
-        <div id="popupMask" style="display:none;"></div>
-        <div id="popupContainer" style="display:none;"><div id="popupContent"></div></div>
         <div class="layout">
             <header>
                 <img src="/images/layout/logo.png"/>

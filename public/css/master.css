@@ -17,42 +17,6 @@ h1 {
 }
 
 /********************
- * Log In Form
- *******************/
-.UserToolbar {
-    float: right;
-    width: 330px;
-    margin-top: -41px;
-    padding: 3px 2px 3px 2px;
-    -moz-border-bottom-left-radius: 7px;
-    -webkit-border-bottom-left-radius: 7px;
-    border-bottom-left-radius: 7px; /* future proofing */
-    -khtml-border-bottom-left-radius: 7px; /* for old Konqueror browsers */
-    -moz-border-bottom-right-radius: 7px;
-    -webkit-border-bottom-right-radius: 7px;
-    border-bottom-right-radius: 7px; /* future proofing */
-    -khtml-border-bottom-right-radius: 7px; /* for old Konqueror browsers */
-    background-color: #E2E4EE;
-    border: #6e7cc4 1px solid;
-    font-size: 0.70em;
-}
-
-.UserToolbar input {
-    width: 90px;
-    height: 15px;
-}
-
-.UserToolbar input[type="button"] {
-    height: 20px;
-    width: 50px;
-    line-height: 0;
-}
-
-.UserToolbar form {
-    margin-top: -3px;
-}
-
-/********************
  * Navigation
  *******************/
 nav {
@@ -62,7 +26,7 @@ nav {
     font-size: 0.83em;
     height: 25px;
     margin: 0 0 0 268px;
-    padding: 3px 2px 0 0;
+    padding: 3px 2px 0 1px;
     border: #bac0de 1px solid;
     background-color: #404d91;
     -moz-border-radius: 7px;
@@ -152,27 +116,27 @@ nav dd dl {
     font-size: 0.80em;
     position: relative;
     z-index: 2;
+    top: -10px;
 }
-.content, .layoutBackground {
-    margin-top: 90px;
-    padding: 5px 10px 10px 10px;
-}
+.content {padding: 0 10px}
 
 header {
-    position:relative;
-    z-index: 2;
+    position: relative;
+    height: 123px;
+    z-index: 3;
 }
 
 header img {
-    float: left;
-    margin-left: -20px
+    position: absolute;
+    left: -20px
 }
 
 .layoutBackground {
+    top: 100px;
     background-color: #f4f5f9;
     opacity:0.8;
     filter:alpha(opacity:0.8);
-    position: relative;
+    position: absolute;
     border: #9ca2c6 solid 1px;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -187,38 +151,4 @@ input {
     -webkit-border-radius: 3px;
     border-radius: 3px; /* future proofing */
     -khtml-border-radius: 3px; /* for old Konqueror browsers */
-}
-
-/* Popup */
-#popupMask, #popupContainer {
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-}
-
-#popupContainer {
-    z-index: 1001;
-}
-
-#popupMask {
-    background-color: #000;
-    opacity:0.7;
-    filter:alpha(opacity:0.7);
-    z-index: 1000;
-}
-
-#popupContent {
-    width: 200px;
-    padding: 5px;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #E2E4EE;
-    border: #6e7cc4 1px solid;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px; /* future proofing */
-    -khtml-border-radius: 6px; /* for old Konqueror browsers */
-    font-size: 0.80em;
 }
