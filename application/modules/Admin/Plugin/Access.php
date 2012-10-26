@@ -27,8 +27,9 @@ class Access extends \Zend_Controller_Plugin_Abstract
 
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');
+        $view->headLink()->appendStylesheet('/css/admin/master.css');
 
         \Zend_Controller_Action_HelperBroker::getStaticHelper('Layout')
-            ->setLayout('admin');
+            ->setLayoutPath(APPLICATION_PATH . '/modules/Admin/layouts/scripts/');
     }
 }

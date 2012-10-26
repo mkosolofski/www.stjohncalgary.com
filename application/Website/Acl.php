@@ -31,13 +31,14 @@ class Acl
 
     protected $_configuration = array(
         self::ROLE_GUEST => array(
-            ':register:index'
+            'admin:user:login'
         ),
         self::ROLE_MEMBER => array(
-            ':register:welcome'
         ),
         self::ROLE_ADMIN => array(
-            'admin:*:*'
+            'admin:index:*',
+            'admin:home:*',
+            'admin:misc:*'
         )
     );
 

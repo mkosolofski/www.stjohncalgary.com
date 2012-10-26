@@ -51,8 +51,7 @@
     margin-bottom: 6px;
 }
 
-.news h1 {font-size: 1.0em}
-.news h1 div {
+.news h2 div {
     font-size: .9em;
     padding-bottom: 1px;
 }

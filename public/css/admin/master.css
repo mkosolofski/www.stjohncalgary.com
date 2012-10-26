@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 785px;
+    font-size: 13px;
+}
+
+ul {margin:0}
+
+h1 {
+    margin: 0;
+    padding 0;
+    font-size: 1.2em;
+}
+
+.content {margin-left: 150px}
+
+nav {
+    position: fixed;
+    width: 130px;
+    background-color: #FFF;
+    text-align: center;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+    padding: 5px 5px;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    box-shadow: inset 0 0 10px #6E7CC4;
+}
+
+nav h1 {
+    text-decoration: underline;
+}
+
+nav dl, nav dt, nav dd {
+    margin: 0;
+    padding: 0;
+}
+
+nav dt, nav dd, nav .logout {
+    text-align: center;
+}
+
+nav .logout {
+    display: block;
+    margin-top: 10px;
+}
+
+nav dt {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+nav dd {padding:2px 0}
+
+nav dd:hover {
+    background-color: #C3C8DE;
+    cursor: pointer;
+}
+

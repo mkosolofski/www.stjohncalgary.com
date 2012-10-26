@@ -7,10 +7,11 @@
         <?php echo $this->headScript();?>
     </head>
     <body>
-        <div class="layout">
-            <div class="content">
-                <?php echo $this->layout()->content;?>
-            </div>
+        <?php if (!isset($this->hideNav)):
+            echo $this->partial('/layout/_navigation.phtml');
+        endif;?>
+        <div class="content">
+            <?php echo $this->layout()->content;?>
         </div>
     </body>
 </html>
