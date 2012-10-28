@@ -1,0 +1,30 @@
+CREATE TABLE  `stjohn`.`event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The event id.',
+  `event` varchar(200) NOT NULL COMMENT 'The event text.',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'When the event was createdupdated.',
+  `date` datetime NOT NULL COMMENT 'The event date and time',
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 COMMENT='Events that are displayed on the home page';
+
+CREATE TABLE  `stjohn`.`news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The news item id',
+  `title` varchar(200) NOT NULL COMMENT 'The news item title',
+  `body` varchar(20000) NOT NULL COMMENT 'The news item',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'When the item was created',
+  `isArchived` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Marks items as archived',
+  `isDeleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Marks items as deleted',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Contains news items that are displayed on the home page';
+
+CREATE TABLE  `stjohn`.`user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'The id of the user',
+  `email` varchar(50) NOT NULL COMMENT 'The user email address',
+  `password` varchar(32) NOT NULL COMMENT 'The user password',
+  `role` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The users access level',
+  `created` datetime NOT NULL COMMENT 'The date and time that the user was created.',
+  `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_username` (`email`),
+  KEY `idx_password` (`password`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='Contains all site users'
