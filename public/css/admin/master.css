@@ -8,12 +8,15 @@ html, body {
     font-size: 13px;
 }
 
+a {text-decoration:none}
+
 ul {margin:0}
 
 h1 {
     margin: 0;
     padding 0;
     font-size: 1.2em;
+    text-decoration: underline;
 }
 
 .content {margin-left: 150px}
@@ -32,16 +35,12 @@ nav {
     box-shadow: inset 0 0 10px #6E7CC4;
 }
 
-nav h1 {
-    text-decoration: underline;
-}
-
-nav dl, nav dt, nav dd {
+nav ul, nav li {
     margin: 0;
     padding: 0;
 }
 
-nav dt, nav dd, nav .logout {
+nav li, nav .logout {
     text-align: center;
 }
 
@@ -50,15 +49,20 @@ nav .logout {
     margin-top: 10px;
 }
 
-nav dt {
-    margin-top: 10px;
-    font-weight: bold;
+nav li {
+    padding: 3px 0;
+    border-bottom: 1px solid #FFF;
+    list-style: none;
 }
 
-nav dd {padding:2px 0}
-
-nav dd:hover {
+nav li:hover, .navSelect {
     background-color: #C3C8DE;
     cursor: pointer;
 }
 
+/* Error message */
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 5px 0;
+}

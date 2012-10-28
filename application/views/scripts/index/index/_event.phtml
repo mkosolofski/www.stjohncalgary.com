@@ -1,0 +1,8 @@
+<div class="eventDate"><?php echo $this->event->date->format('M. d, Y g:ia');?></div>
+<?php
+    echo $this->event->event;
+    if (isset($this->appendHTML)) :
+        echo $this->appendHTML;
+    endif;
+?>
+<div class="eventDivider"></div>

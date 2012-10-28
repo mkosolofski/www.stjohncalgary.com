@@ -1,0 +1,45 @@
+<section>
+    <h1>New</h1>
+    <?php if (isset($this->error)) :?>
+        <div class="error">
+            <?php echo $this->error;?>
+        </div>
+    <?php endif;?>
+    <form method="post" action="/admin/home_news/create"/>
+        <label for="newsTitle">Title</label>
+        <br/>
+        <input type="text" id="newsTitle" name="newsTitle" value="<?php echo htmlentities($this->formValues['newsTitle']);?>"/>
+        <br/>
+        <label for="newsBody">Body</label>
+        <br/>
+        <textarea id="newsBody" name="newsBody" rows="4" maxlength="200"><?php echo htmlentities($this->formValues['newsBody']);?></textarea>
+        <br/>
+        <input type="submit" value="Add"/>
+    </form>
+</section>
+<section class="newsAdmin">
+    <?php if ($this->archived == 1) :?>
+        <h1>Archived</h1>
+        (<a href="/admin/home_news">view active</a>)
+    <?php else: ?>
+        <h1>Active</h1>
+        (<a href="/admin/home_news?archived=1">view archived</a>)
+    <?php endif;?>
+    <div>
+    <?php
+    /*
+        foreach ($this->news as $item) :
+            echo $this->partial(
+                'home/_news.phtml',
+                array(
+                    'news' => $item,
+                    'appendHTML' => '
+                        <br/>
+                        <a href="/admin/home_event/archive?id=' . $event->id . '&archived=' . $this->archived .'">archive</a>
+                    '
+                )
+            );
+        endforeach;*/
+    ?>
+    </div>
+</section>

@@ -5,7 +5,7 @@
                 <div class="worshipTime"> 
                     <img src="/images/index/index/worship_time.png"/>
                     <div style="text-align:center;">
-                        <?echo $this->partial('index/_worshiptime.phtml');?>
+                        <?echo $this->partial('index/index/_worshiptime.phtml');?>
                     </div>
                 </div>
             </div>
@@ -13,8 +13,12 @@
                 <div class="events"> 
                     <img src="/images/index/index/events.png"/>
                     <div>
-                        <div style="height:200px;overflow-y:scroll;">
-                            <?echo $this->partial('index/_events.phtml');?>
+                        <div style="height:200px;overflow-y:auto;">
+                        <?php
+                            foreach ($this->events as $event) :
+                                echo $this->partial('index/index/_event.phtml', array('event' => $event));
+                            endforeach;
+                        ?>
                         </div>
                     </div>
                 </div>
@@ -67,11 +71,11 @@
                     </div>
                 </div>
             </div>
-            <?echo $this->partial('index/_welcome.phtml');?>
+            <?echo $this->partial('index/index/_welcome.phtml');?>
             <section class="news">
                 <img src="/images/index/index/news.png"/>
                 <div>
-                    <?echo $this->partial('index/_news.phtml');?>
+                    <?echo $this->partial('index/index/_news.phtml');?>
                 </div>
             </section>
         </div>

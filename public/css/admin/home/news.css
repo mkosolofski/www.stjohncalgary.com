@@ -1,0 +1,11 @@
+section {text-align: center}
+.eventsAdmin {
+    margin-top: 10px
+}
+.newsAdmin div {
+   width:160px;
+   margin-left:auto;
+   margin-right:auto;
+   margin-top: 5px;
+}
+#newsTitle, #newsBody{width:160px}

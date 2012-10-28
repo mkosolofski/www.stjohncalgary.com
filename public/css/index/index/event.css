@@ -1,0 +1,30 @@
+.events img {
+     position: absolute;
+     top: -18px;
+     left: 4px;
+}
+
+.events {
+    text-align: center;
+    position: relative;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+    padding: 15px 5px 5px 5px;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    box-shadow: inset 0 0 10px #6E7CC4;
+}
+
+.events {margin-top: 23px}
+
+.eventDate {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.eventDivider {
+    width: 80%;
+    border-bottom: 1px dashed #000;
+    margin: 4px 0 4px 10%;
+}

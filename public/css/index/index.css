@@ -4,14 +4,14 @@
 }
 .columnB {margin-left: 170px}
 
-/* Worship Time, Events, Keep In Touch, and Contact */
-.worshipTime img, .events img, .keepInTouch img, .contact img {
+/* Worship Time, Keep In Touch, and Contact */
+.worshipTime img, .keepInTouch img, .contact img {
      position: absolute;
      top: -18px;
      left: 4px;
 }
 
-.worshipTime, .events, .keepInTouch, .contact {
+.worshipTime, .keepInTouch, .contact {
     position: relative;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -22,18 +22,7 @@
     box-shadow: inset 0 0 10px #6E7CC4;
 }
 
-.events, .keepInTouch, .contact {margin-top: 23px}
-
-.eventDate {
-    font-size:.9em;
-    font-weight:bold;
-}
-
-.eventDivider {
-    width: 80%;
-    border-bottom: 1px dashed #000;
-    margin: 4px 0 4px 10%;
-}
+.keepInTouch, .contact {margin-top: 23px}
 
 .worshipTime {
     margin-top: 15px;

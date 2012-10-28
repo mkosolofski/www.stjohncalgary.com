@@ -1,0 +1,11 @@
+section {text-align: center}
+.eventsAdmin {
+    margin-top: 10px
+}
+.eventsAdmin div {
+   width:160px;
+   margin-left:auto;
+   margin-right:auto;
+   margin-top: 5px;
+}
+#eventText, #eventDate{width:160px}

@@ -19,7 +19,7 @@ class Extended_View_Helper_HeadLink extends Zend_View_Helper_HeadLink
         if (preg_match('/^(?P<action>set|(ap|pre)pend|offsetSet)(?P<type>Stylesheet|Alternate)$/', $method, $matches)) {
             if (strpos(strtolower($method), 'stylesheet') !== false) {
                 $version = filemtime(APPLICATION_PATH . '/../public/' . $args[0]);
-                $args[0] = str_replace('.css', $version . '.css', $args[0]);
+                $args[0] = str_replace('.css', 'UXMGIRD' . $version . '.css', $args[0]);
             }
         }
 

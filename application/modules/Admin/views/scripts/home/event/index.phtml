@@ -1,0 +1,44 @@
+<section>
+    <h1>New</h1>
+    <?php if (isset($this->error)) :?>
+        <div class="error">
+            <?php echo $this->error;?>
+        </div>
+    <?php endif;?>
+    <form method="post" action="/admin/home_event/create"/>
+        <label for="eventDate">Date</label>
+        <br/>
+        <input type="text" id="eventDate" name="eventDate" readonly="readonly" value="<?php echo htmlentities($this->formValues['eventDate']);?>"/>
+        <br/>
+        <label for="eventText">Event</label>
+        <br/>
+        <textarea id="eventText" name="eventText" rows="4" maxlength="200"><?php echo htmlentities($this->formValues['eventText']);?></textarea>
+        <br/>
+        <input type="submit" value="Add"/>
+    </form>
+</section>
+<section class="eventsAdmin">
+    <?php if ($this->expired == 1) :?>
+        <h1>Expired</h1>
+        (<a href="/admin/home_event">view active</a>)
+    <?php else: ?>
+        <h1>Active</h1>
+        (<a href="/admin/home_event?expired=1">view expired</a>)
+    <?php endif;?>
+    <div>
+    <?php
+        foreach ($this->events as $event) :
+            echo $this->partial(
+                'home/_event.phtml',
+                array(
+                    'event' => $event,
+                    'appendHTML' => '
+                        <br/>
+                        <a href="javascript:Admin_Home_Event.deleteEvent(' . $event->id . ',' . (int)$this->expired . ');">delete</a>
+                    '
+                )
+            );
+        endforeach;
+    ?>
+    </div>
+</section>
