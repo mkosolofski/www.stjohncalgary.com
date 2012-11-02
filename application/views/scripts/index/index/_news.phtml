@@ -1,30 +1,12 @@
 <article>
     <h2>
-        <div>November 1, 2012</div>
-        New Website Launched
+        <div><?php echo $this->news->created->format('F d, Y g:ia');?></div>
+        <?php echo htmlentities($this->news->title);?>
     </h2>
-    <p>
-        Metus mauris tincidunt aptent morbi scelerisque congue praesent hymenaeos neque in, feugiat viverra. Sed donec curabitur augue lacus ridiculus, sollicitudin torquent quis sit fermentum nulla ullamcorper sapien. Lacus vehicula, praesent imperdiet senectus phasellus lobortis ad cursus. Euismod. Magna ultricies. Integer suspendisse molestie quisque nibh sociis. Vehicula tristique fames mollis lacus. Tempus blandit sagittis massa. Hac tempor. Dignissim pulvinar posuere libero mi senectus ad pretium massa praesent cras varius class a torquent aliquam Nunc. At neque conubia. Posuere. Diam. Justo auctor habitant molestie semper libero lectus quam feugiat bibendum. Tincidunt vel consequat auctor. Sociis commodo odio iaculis mollis.
-    </p>
-</article>
-<article>
-    <h2>
-        <div>October 12, 2012</div>
-        New Elevator Installed
-    </h2>
-    <p>
-        Vel lorem litora sapien est, quisque eget natoque taciti Facilisi vivamus. Orci. Magna tristique pretium ut. Adipiscing, feugiat vestibulum leo interdum mattis. Lectus duis consectetuer consectetuer cras ipsum sapien litora turpis libero augue.
-        <br/>
-        <br/>
-        Interdum platea lorem neque luctus aptent amet feugiat augue. Viverra ridiculus eleifend laoreet sem ac facilisis vivamus, ullamcorper vivamus at vehicula mus maecenas augue porta varius, ante.
-    </p>
-</article>
-<article>
-    <h2>
-        <div>October 10, 2012</div>
-        In From The Cold A Success!
-    </h2>
-    <p>
-        Imperdiet cubilia tellus fames Nec proin proin amet pellentesque, amet. Lobortis iaculis nisi at cras sapien ante proin luctus per urna natoque habitant diam feugiat natoque sit semper leo condimentum.
-    </p>
+    <p><?php echo Zend_Markup::factory('Bbcode')->render($this->news->body);?></p>
+    <?php 
+    if (isset($this->appendHTML)) :
+        echo $this->appendHTML;
+    endif;
+    ?>
 </article>

@@ -22,9 +22,7 @@ class Admin_Home_EventController extends Zend_Controller_Action
         $this->view->headScript()->appendFile('/js/admin/home/event.js');
         $this->view->getHelper('headLink')->appendStylesheet('/css/admin/home/event.css');
         $this->view->getHelper('headLink')->appendStylesheet('/css/index/index/event.css');
-        
         $this->view->expired = $request->getQuery('expired');
-        $this->view->formValues = array('eventDate' => '', 'eventText' => '');
         $this->view->events = array();
         
         $event = new \Service\Event();
@@ -45,10 +43,6 @@ class Admin_Home_EventController extends Zend_Controller_Action
     public function createAction()
     {
         $request = $this->getRequest();
-        $this->view->formValues = array(
-            'eventDate' => $request->getPost('eventDate'),
-            'eventText' => $request->getPost('eventText')
-        );
 
         if ($request->isPost()) {
             $event = new \Service\Event();
@@ -58,6 +52,10 @@ class Admin_Home_EventController extends Zend_Controller_Action
             )->get();
             
             if ($response['result'] == false) {
+                $this->view->formValues = array(
+                    'eventDate' => $request->getPost('eventDate'),
+                    'eventText' => $request->getPost('eventText')
+                );
                 $this->view->error = $response['message'];
             } else {
                 \Zend_Registry::getInstance()->entityManager->flush();

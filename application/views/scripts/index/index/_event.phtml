@@ -1,6 +1,6 @@
 <div class="eventDate"><?php echo $this->event->date->format('M. d, Y g:ia');?></div>
 <?php
-    echo $this->event->event;
+    echo htmlentities($this->event->event);
     if (isset($this->appendHTML)) :
         echo $this->appendHTML;
     endif;

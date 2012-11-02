@@ -1,11 +1,16 @@
 section {text-align: center}
-.eventsAdmin {
-    margin-top: 10px
+.newsAdmin {
+    margin-top: 10px;
 }
-.newsAdmin div {
-   width:160px;
-   margin-left:auto;
-   margin-right:auto;
-   margin-top: 5px;
+.newsAdmin section, #newsBodyPreview {
+    margin-left: auto;
+    margin-right: auto;
 }
-#newsTitle, #newsBody{width:160px}
+.newsAdmin section, #newsBodyPreview, #newsBody {width: 700px}
+#newsBodyPreview {
+    padding: 5px;
+    text-align: left;
+    min-height: 75px;
+    border: 1px dotted #000;
+}
+#newsTitle {width: 200px} 

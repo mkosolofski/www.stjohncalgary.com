@@ -22,7 +22,7 @@ class News extends Abstrct
     protected $id;
 
     /** 
-     * @Column(type="string",nullable=false,length=200) 
+     * @Column(type="string",nullable=false,length=100) 
      */
     protected $title;
     
@@ -41,12 +41,6 @@ class News extends Abstrct
      * @GeneratedValue
      */
     protected $isDeleted = 0;
-    
-    /**
-     * @Column(type="integer",length=1)
-     * @GeneratedValue
-     */
-    protected $isArchived = 0;
 
     /**
      * Fields that can be set in the model. 

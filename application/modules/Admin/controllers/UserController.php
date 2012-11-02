@@ -39,4 +39,15 @@ class Admin_UserController extends Zend_Controller_Action
 
         $this->_redirect('/admin/index/index');
     }
+
+    /**
+     * The admin log out action
+     */
+    public function logoutAction()
+    {
+        $userService = new \Service\User();
+        $userService->logout();
+        
+        $this->_redirect('/');
+    }
 }

@@ -18,6 +18,9 @@ var Admin_Home_Event = {
 
     /**
      * Confirmation pop up when a user tries to delete an event. 
+     *
+     * @param int eventId The event id.
+     * @param int expiredFlag 1 if in expired mode, 0 otherwise.
      */
     deleteEvent:function(eventId, expiredFlag)
     {
