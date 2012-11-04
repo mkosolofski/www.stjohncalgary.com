@@ -3,8 +3,13 @@
 
    $html = $this->params['html'];
    $fileToUpdate = $this->params['file'];
-   $newFile = APPLICATION_PATH.'/views/scripts/index/'.$fileToUpdate.'r';
-   $oldFile = APPLICATION_PATH.'/views/scripts/index/'.$fileToUpdate;
+   
+   //strip forward slashes from the file path to ensure unique revert file names
+   $revertFile = str_replace('/','',$fileToUpdate);
+   
+   
+   $newFile = APPLICATION_PATH.'/modules/Admin/views/scripts/content/index/revertfiles/'.$revertFile;
+   $oldFile = APPLICATION_PATH.'/views/scripts/'.$fileToUpdate;
    
    //get the contents of the old file so it can be save to a revert file
    $contents = file_get_contents($oldFile);

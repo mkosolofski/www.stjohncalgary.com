@@ -1,8 +1,16 @@
 <?php
-//returns the html from the partial to js/admn/index.js
-
-   $path = $this->params['file'];
-   $contents = $this->partial('mainScripts/index/'.$path);
-   echo $contents;
+//returns the html from the partial to js/admin/index.js
+//if it is an editable file it is a partial
+    if($this->params['editableFile'] == 'TRUE'){
+        $path = $this->params['file'];
+        $contents = $this->partial('mainScripts/'.$path);
+        echo $contents;
+    }
+//if the file is a revert file then it requires a different path then the partials
+    else{
+        $revert = $this->params['file'];
+        $contents = $this->partial('content/index/revertfiles/'.$revert);
+        echo $contents;
+    }
    
 ?>

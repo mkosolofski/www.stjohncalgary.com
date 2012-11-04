@@ -1,0 +1,14 @@
+<h1>Select a file to upload</h1>
+<form enctype="multipart/form-data" action="/admin/file/upload" method="POST">
+    <input type="hidden" name="MAX_FILE_SIZE" value="524288" />
+        Choose a file to upload: <input name="uploadedfile" type="file" />
+    <br />
+    <input type="submit" value="Upload File" />
+</form>
+<div>
+    <br/><br/>
+    <h1>Click on a file to remove it</h1>
+        <?php foreach($this->images as $value) : ?>
+            <div onclick="removeImage('<?php echo $value;?>')" class="image" style="color: blue; cursor: pointer;"><?php echo $value;?></div>
+        <?php endforeach?>
+</div>

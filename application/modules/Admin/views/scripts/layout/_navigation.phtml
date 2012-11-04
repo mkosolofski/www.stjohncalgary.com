@@ -14,9 +14,13 @@
             class="<?php if (strtolower($controllerName)== 'home_news') : echo 'navSelect'; endif;?>" >
             Home - News
         </li>
-        <li onclick="window.location = '/admin/misc/content'"
+        <li onclick="window.location = '/admin/content'"
             class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
             Content
+        </li>
+        <li onclick="window.location = '/admin/file'"
+            class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
+            Upload Files
         </li>
         <li onclick="window.location = '/admin/misc/registeredemail'"
             class="<?php if (strtolower($controllerName)== 'registeredemail') : echo 'navSelect'; endif;?>" >
