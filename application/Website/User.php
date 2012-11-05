@@ -117,6 +117,7 @@ class User
         }
 
         $session = new \Zend_Session_Namespace(self::SESSION_NAMESPACE);
+        $session->id = $userModel->id;
         $session->email = $userModel->email;
         $session->setExpirationSeconds(self::SESSION_EXPIRATION);
         return true;

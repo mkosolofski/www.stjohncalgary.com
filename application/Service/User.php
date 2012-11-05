@@ -97,7 +97,8 @@ class User
                 ->createQueryBuilder()
                 ->select('u.id,u.email,u.status')
                 ->from('\Model\User', 'u')
-                ->orderBy('u.email', 'DESC')
+                ->orderBy('u.status', 'ASC')
+                ->addOrderBy('u.email', 'ASC')
                 ->getQuery()
                 ->execute()
         )->setResult(true);

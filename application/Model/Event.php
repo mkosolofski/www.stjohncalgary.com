@@ -47,5 +47,5 @@ class Event extends Abstrct
      * 
      * @var array
      */
-    protected $_setableFields = array('event', 'is_archived', 'date', 'isDeleted');
+    protected $_setableFields = array('event', 'date', 'isDeleted');
 }

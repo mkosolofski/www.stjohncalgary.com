@@ -66,6 +66,8 @@ nav li:hover, .navSelect {
     cursor: pointer;
 }
 
+nav h2 {margin-top: 7px}
+
 /* Error message */
 .error {
     color: red;
