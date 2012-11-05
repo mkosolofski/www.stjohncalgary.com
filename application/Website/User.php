@@ -28,6 +28,13 @@ class User
     const PASSWORD_MIN_CHARS = 5;
     /**#@-*/
 
+    /**#@+
+     * The statuses that a user can have.
+     */
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
+    /**#@-*/
+
     /**
      * Creates a new user.
      * 
@@ -74,10 +81,10 @@ class User
         $userModel = new \Model\User();
         $userModel->email = $email;
         $userModel->password = $passwordTool->encrypt($password);
-        $userModel->role = \Website\Acl::ROLE_MEMBER; 
+        $userModel->role = \Website\Acl::ROLE_ADMIN; 
         $userModel->created = new \DateTime();
+        $userModel->status = self::STATUS_ACTIVE;
         \Zend_Registry::getInstance()->entityManager->persist($userModel);
-        \Zend_Registry::getInstance()->entityManager->flush();
     }
 
     /**
@@ -99,7 +106,7 @@ class User
         }
 
         $userModel = \Zend_Registry::getInstance()->entityManager
-            ->getRepository('\Model\User')->findOneBy(array( 'email' => $email));
+            ->getRepository('\Model\User')->findOneBy(array( 'email' => $email, 'status' => self::STATUS_ACTIVE));
         if (is_null($userModel)) {
             return false;
         }

@@ -72,3 +72,10 @@ nav li:hover, .navSelect {
     font-weight: bold;
     margin: 5px 0;
 }
+
+/* Normal message */
+.message {
+    color: green;
+    font-weight: bold;
+    margin: 5px 0;
+}

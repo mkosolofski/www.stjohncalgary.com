@@ -83,4 +83,121 @@ class User
 
         return $response->setResult(true);
     }
+
+    /**
+     * Returns all users.
+     *
+     * @return Service_Response All users.
+     */
+    public function getAll()
+    {
+        $response = new Response(); 
+        return $response->setMessage(
+            \Zend_Registry::getInstance()->entityManager
+                ->createQueryBuilder()
+                ->select('u.id,u.email,u.status')
+                ->from('\Model\User', 'u')
+                ->orderBy('u.email', 'DESC')
+                ->getQuery()
+                ->execute()
+        )->setResult(true);
+    }
+
+    /**
+     * Deactivates a user account.
+     *
+     * @param int $id The id of the user account to deactivate.
+     * @return Service_Response If deactivation was successfull.
+     */
+    public function deactivate($id)
+    {
+        $response = new Response();
+
+        if (filter_var($id, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) === false) {
+            return $response->setMessage('Invalid user id.')->setResult(false);
+        }
+
+        $entityManager = \Zend_Registry::getInstance()->entityManager;
+        
+        $userModel = $entityManager->getRepository('\Model\User')->find($id);
+        if (is_null($userModel)) {
+            return $response->setMessage('User not found')->setResult(false);
+        }
+
+        $userModel->status = \Website\User::STATUS_INACTIVE;
+        $entityManager->persist($userModel);
+
+        return $response->setResult(true);
+    }
+
+    /**
+     * Reactivates a user account.
+     *
+     * @param int $id The id of the user account to reactivate.
+     * @return Service_Response If reactivation was successfull.
+     */
+    public function reactivate($id)
+    {
+        $response = new Response();
+
+        if (filter_var($id, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) === false) {
+            return $response->setMessage('Invalid user id.')->setResult(false);
+        }
+
+        $entityManager = \Zend_Registry::getInstance()->entityManager;
+        
+        $userModel = $entityManager->getRepository('\Model\User')->find($id);
+        if (is_null($userModel)) {
+            return $response->setMessage('User not found')->setResult(false);
+        }
+
+        $userModel->status = \Website\User::STATUS_ACTIVE;
+        $entityManager->persist($userModel);
+
+        return $response->setResult(true);
+    }
+
+    /**
+     * Resets a user accounts password with a random password. The account is sent an email
+     * with the new password.
+     * 
+     * @param int $id The id of the user account to reactivate.
+     * @return Service_Response If password reset was successfull.
+     */
+    public function resetPassword($id)
+    {
+        $response = new Response();
+
+        if (filter_var($id, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) === false) {
+            return $response->setMessage('Invalid user id.')->setResult(false);
+        }
+
+        $entityManager = \Zend_Registry::getInstance()->entityManager;
+        
+        $userModel = $entityManager->getRepository('\Model\User')->find($id);
+        if (is_null($userModel)) {
+            return $response->setMessage('User not found')->setResult(false);
+        }
+
+        $passwordObj = new \Website\Password();
+        $newPassword = $passwordObj->generate();
+
+        $userModel->password = $newPassword;
+        $entityManager->persist($userModel);
+
+        $mailer = new \Zend_Mail();
+        $mailer->addTo($userModel->email)
+            ->setFrom('donotreply@stjohncalgary.com')
+            ->setSubject('Your New Password')
+            ->setBodyText($newPassword);
+
+        try {
+            $mailer->send();
+        } catch (Zend_Mail_Transport_Exception $e) {
+            return $response->setMessage('Failed to send new password to ' . $userModel->email)
+                ->setResult(false);
+        }
+
+        return $response->setResult(true);
+    }
 }

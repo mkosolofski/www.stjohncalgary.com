@@ -32,9 +32,14 @@ class User extends Abstrct
     protected $password;
     
     /**
-     * @Column(type="integer",nullable=false,length=4) 
+     * @Column(type="smallint",nullable=false) 
      */
     protected $role;
+    
+    /**
+     * @Column(type="smallint",nullable=false) 
+     */
+    protected $status;
 
     /**
      * @Column(type="datetime",nullable=false)
@@ -51,5 +56,5 @@ class User extends Abstrct
      * 
      * @var array
      */
-    protected $_setableFields = array('email', 'password', 'role', 'created');
+    protected $_setableFields = array('email', 'password', 'role', 'created', 'status');
 }

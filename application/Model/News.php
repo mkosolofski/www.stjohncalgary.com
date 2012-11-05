@@ -37,7 +37,7 @@ class News extends Abstrct
     protected $created;
 
     /**
-     * @Column(type="integer",length=1)
+     * @Column(type="smallint",length=1)
      * @GeneratedValue
      */
     protected $isDeleted = 0;
