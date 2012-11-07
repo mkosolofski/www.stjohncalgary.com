@@ -164,7 +164,7 @@ var layout_nav = {
             );
 
         // Select the target menu item.
-        target.children('a').first().addClass('navSelectItem');
+        target.children('div').first().addClass('navSelectItem');
 
         // Display the associated sub menu (if one exists).
         if (submenu != null && !submenu.is(':visible')) {

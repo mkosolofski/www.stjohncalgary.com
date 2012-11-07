@@ -3,7 +3,11 @@
     $topItemCounter = 0;
     foreach ($this->container as $page) :?>
     <div>
-        <a href="<?php echo $page->getHref();?>" class="navTopItem"><?php echo $page->getLabel();?></a>
+        <?php if (empty($page->pages)) :?>
+            <a href="<?php echo $page->getHref();?>" class="navTopItem"><?php echo $page->getLabel();?></a>
+        <?php else: ?>
+            <span class="navTopItem"><?php echo htmlentities($page);?></span>
+        <?php endif;?>
         <?php if (!empty($page->pages)) :?>
             <dl style="display:none;" id="navSubmenu<?php echo $topItemCounter;?>">
             <?php
