@@ -56,6 +56,7 @@ class News
         $newsModel = new \Model\News();
         $newsModel->title = $title;
         $newsModel->body = $body;
+        $newsModel->created = new \DateTime('now');
         \Zend_Registry::getInstance()->entityManager->persist($newsModel);
 
         return $response->setResult(true);

@@ -47,5 +47,5 @@ class News extends Abstrct
      * 
      * @var array
      */
-    protected $_setableFields = array('title', 'body', 'isDeleted');
+    protected $_setableFields = array('title', 'body', 'isDeleted', 'created');
 }
