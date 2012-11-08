@@ -7,10 +7,6 @@
             class="<?php if (strtolower($controllerName)== 'index') : echo 'navSelect'; endif;?>" >
             Main
         </li>
-        <li onclick="window.location = '/admin/misc/content'"
-            class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
-            Content
-        </li>
         <li onclick="window.location = '/admin/home_event'"
             class="<?php if (strtolower($controllerName)== 'home_event') : echo 'navSelect'; endif;?>" >
             Home - Events
@@ -24,7 +20,7 @@
             Content
         </li>
         <li onclick="window.location = '/admin/file'"
-            class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
+            class="<?php if (strtolower($controllerName)== 'file') : echo 'navSelect'; endif;?>" >
             Upload Files
         </li>
         <li onclick="window.location = '/admin/user/manage'"
