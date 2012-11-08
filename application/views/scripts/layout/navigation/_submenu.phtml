@@ -1,4 +1,14 @@
-<dt><?php echo $this->menu()->htmlify($this->page);?></dt>
+<dt>
+    <div>
+        <?php
+            if (empty($this->page->pages)) :
+                echo $this->menu()->htmlify($this->page);
+            else :
+                echo htmlentities($this->page);
+            endif;
+        ?>
+    </div>
+</dt>
 <?php if (!empty($this->page->pages)) : ?>
     <dd>
         <dl style="display:none;" id="<?php echo $this->id;?>">

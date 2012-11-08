@@ -32,21 +32,6 @@
     background-size: 100px 100px;
 }
 
-/* News */
-.news img {margin-top: 10px}
-
-.news article {
-    border-bottom: 1px dotted #6E7CC4;
-    margin-bottom: 6px;
-}
-
-.news h2 div {
-    font-size: .9em;
-    padding-bottom: 1px;
-}
-
-.news p {margin: 6px 0 8px 0}
-
 /* Slideshow */
 #slides {
     float: right;

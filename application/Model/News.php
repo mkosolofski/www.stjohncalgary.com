@@ -22,7 +22,7 @@ class News extends Abstrct
     protected $id;
 
     /** 
-     * @Column(type="string",nullable=false,length=200) 
+     * @Column(type="string",nullable=false,length=100) 
      */
     protected $title;
     
@@ -37,21 +37,15 @@ class News extends Abstrct
     protected $created;
 
     /**
-     * @Column(type="integer",length=1)
+     * @Column(type="smallint",length=1)
      * @GeneratedValue
      */
     protected $isDeleted = 0;
-    
-    /**
-     * @Column(type="integer",length=1)
-     * @GeneratedValue
-     */
-    protected $isArchived = 0;
 
     /**
      * Fields that can be set in the model. 
      * 
      * @var array
      */
-    protected $_setableFields = array('title', 'body', 'is_archived', 'isDeleted');
+    protected $_setableFields = array('title', 'body', 'isDeleted', 'created');
 }

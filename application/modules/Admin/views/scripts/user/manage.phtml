@@ -1,0 +1,50 @@
+<div style="text-align:center">
+    <section>
+        <h1>New</h1>
+        <?php if (isset($this->createError)) :?>
+            <div class="error"><?php echo $this->createError;?></div>
+        <?php endif;?>
+        <form action="/admin/user/create" method="post">
+            <label for="email">Email</label>
+            <br/>
+            <input type="text" id="email" name="email" maxlength="50" value="<?php echo htmlentities($this->formValues['email']);?>"/>
+            <br/>
+            <label for="password">Password</label>
+            <br/>
+            <input type="password" name="password" value="<?php echo htmlentities($this->formValues['password']);?>"/>
+            <br/>
+            <input type="submit" value="Create"/>
+        </form>
+    </section>
+    <section class="currentUsers">
+        <h1>Current</h1>
+        <?php if (isset($this->currentError)) :?>
+            <div class="error"><?php echo $this->currentError;?></div>
+        <?php endif;?>
+        <table style="margin-left:auto;margin-right:auto">
+        <?php foreach ($this->users as $user) :?>
+            <tr>
+                <td>
+                    <?php echo htmlentities($user['email']);?>
+                </td>
+            <?php if ($user['status'] == \Website\User::STATUS_ACTIVE) : ?>
+                <td>
+                    (<a href="/admin/user/deactivate?id=<?php echo $user['id'];?>">deactivate</a>)
+                </td>
+                <td>
+                <?php if (isset($this->currentMessage[$user['id']])) :?>
+                    <div class="message"><?php echo $this->currentMessage[$user['id']];?></div>
+                <?php endif;?>
+                    (<a href="/admin/user/reset-password?id=<?php echo $user['id'];?>">reset password</a>)
+                </td>
+            <?php else :?>
+                <td>
+                    (<a href="/admin/user/reactivate?id=<?php echo $user['id'];?>">reactivate</a>)
+                </td>
+                <td></td>
+            <?php endif;?>
+            </tr>
+        <?php endforeach;?>
+        </table>
+    </section>
+</div>

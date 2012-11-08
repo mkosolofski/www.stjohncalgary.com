@@ -74,9 +74,11 @@
             <?echo $this->partial('index/index/_welcome.phtml');?>
             <section class="news">
                 <img src="/images/index/index/news.png"/>
-                <div>
-                    <?echo $this->partial('index/index/_news.phtml');?>
-                </div>
+                <?php
+                    foreach ($this->news as $article) :
+                        echo $this->partial('index/index/_news.phtml', array('news' => $article));
+                    endforeach;
+                ?>
             </section>
         </div>
     </div>

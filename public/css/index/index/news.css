@@ -1,0 +1,24 @@
+.news img {margin-top: 10px}
+
+.news article {
+    border-bottom: 1px dotted #6E7CC4;
+    margin-bottom: 6px;
+}
+
+.news h2 {
+    text-align: left;
+
+}
+
+.news h2 div {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    font-size: .9em;
+    padding-bottom: 1px;
+}
+
+.news p {
+    text-align: left;
+    margin: 6px 0 8px 0
+}

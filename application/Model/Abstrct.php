@@ -38,6 +38,16 @@ abstract class Abstrct
     }
 
     /**
+     * Returns a numerically index array of setable field names for the model.
+     * 
+     * @return array The setable field names.
+     */
+    public function getSetableFields()
+    {
+        return $this->_setableFields;
+    }
+
+    /**
      * Fields that can be set in the model. 
      * 
      * @var array

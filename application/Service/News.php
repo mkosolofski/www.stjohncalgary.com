@@ -14,6 +14,11 @@ namespace Service;
 class News
 {
     /**
+     * News is automatically archived after 14 days (60 * 60 * 24 * 14).
+     */
+    const ARCHIVE_TIME = 1209600;
+
+    /**
      * Creates a new news item
      * 
      * @param string $title The news item title.
@@ -31,8 +36,8 @@ class News
 
         $title = trim($title);
         $titleLength = strlen($title);
-        if ($titleLength < 1 || $titleLength > 200) {
-            return $response->setMessage('News title must be between 1 and 200 characters long.')
+        if ($titleLength < 1 || $titleLength > 100) {
+            return $response->setMessage('News title must be between 1 and 100 characters long.')
                 ->setResult(false); 
         }
         
@@ -51,6 +56,7 @@ class News
         $newsModel = new \Model\News();
         $newsModel->title = $title;
         $newsModel->body = $body;
+        $newsModel->created = new \DateTime('now');
         \Zend_Registry::getInstance()->entityManager->persist($newsModel);
 
         return $response->setResult(true);
@@ -97,9 +103,10 @@ class News
                 ->createQueryBuilder()
                 ->select('n')
                 ->from('\Model\News', 'n')
-                ->where('n.isArchived = 0')
-                ->andWhere('n.isDeleted = 0')
+                ->where('n.isDeleted = 0')
+                ->andWhere('n.created < :created')
                 ->orderBy('n.created', 'DESC')
+                ->setParameter('created', new \DateTime('-' . self::ARCHIVE_TIME . ' SECOND'))
                 ->getQuery()
                 ->execute()
         )->setResult(true);
@@ -118,9 +125,10 @@ class News
                 ->createQueryBuilder()
                 ->select('n')
                 ->from('\Model\News', 'n')
-                ->where('n.isArchived = 1')
-                ->andWhere('n.isDeleted = 0')
+                ->where('n.isDeleted = 0')
+                ->andWhere('n.created >= :created')
                 ->orderBy('n.created', 'DESC')
+                ->setParameter('created', new \DateTime('-' . self::ARCHIVE_TIME . ' SECOND'))
                 ->getQuery()
                 ->execute()
         )->setResult(true);

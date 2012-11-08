@@ -18,29 +18,23 @@ class Admin_Home_NewsController extends Zend_Controller_Action
     public function indexAction()
     {
         $request = $this->getRequest();
+        
+        $this->view->headScript()->appendFile('/js/admin/home/news.js');
         $this->view->getHelper('headLink')->appendStylesheet('/css/admin/home/news.css');
+        $this->view->getHelper('headLink')->appendStylesheet('/css/index/index/news.css');
+        $this->view->archived = $request->getQuery('archived');
+        $this->view->news = array();
         
-        $this->view->formValues = array('newsTitle' => '', 'newsBody' => '');
-    /*
-        $this->view->headScript()->appendFile('/js/admin/home/event.js');
-        $this->view->getHelper('headLink')->appendStylesheet('/css/admin/home/event.css');
-        $this->view->getHelper('headLink')->appendStylesheet('/css/index/index/event.css');
-        
-        $this->view->inactive = $request->getQuery('inactive');
-        $this->view->formValues = array('eventDate' => '', 'eventText' => '');
-        $this->view->events = array();
-        
-        $event = new \Service\Event();
-        if ($this->view->inactive == 1) {
-            $events = $event->getInActiveEvents()->get();
+        $news = new \Service\News();
+        if ($this->view->archived == 1) {
+            $news = $news->getArchivedNews()->get();
         } else {
-            $events = $event->getActiveEvents()->get();
+            $news = $news->getActiveNews()->get();
         }
-
-        if (count($events['message']) > 0) {
-            $this->view->events = $events['message'];
+        
+        if (count($news['message']) > 0) {
+            $this->view->news = $news['message'];
         }
-        */
     }
 
     /**
@@ -49,10 +43,6 @@ class Admin_Home_NewsController extends Zend_Controller_Action
     public function createAction()
     {
         $request = $this->getRequest();
-        $this->view->formValues = array(
-            'newsTitle' => $request->getPost('newsTitle'),
-            'newsBody' => $request->getPost('newsBody')
-        );
 
         if ($request->isPost()) {
             $news = new \Service\News();
@@ -62,6 +52,10 @@ class Admin_Home_NewsController extends Zend_Controller_Action
             )->get();
             
             if ($response['result'] == false) {
+                $this->view->formValues = array(
+                    'newsTitle' => $request->getPost('newsTitle'),
+                    'newsBody' => $request->getPost('newsBody')
+                );
                 $this->view->error = $response['message'];
             } else {
                 \Zend_Registry::getInstance()->entityManager->flush();
@@ -77,24 +71,15 @@ class Admin_Home_NewsController extends Zend_Controller_Action
      */
     public function deleteAction()
     {
-
-    }
-
-    /**
-     * The news archive action.
-     */
-    public function archiveAction()
-    {
-    /*
         $request = $this->getRequest();
-        $eventId = $request->getQuery('id');
-        if (filter_var($eventId, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) === false) {
+        $newsId = $request->getQuery('id');
+        if (filter_var($newsId, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) === false) {
             $this->_redirect('/admin/index/index');
             return;
         }
         
-        $event = new \Service\Event();
-        $response = $event->delete($eventId)->get();
+        $news = new \Service\News();
+        $response = $news->delete($newsId)->get();
         
         if ($response['result'] == true) {
             \Zend_Registry::getInstance()->entityManager->flush();
@@ -102,6 +87,5 @@ class Admin_Home_NewsController extends Zend_Controller_Action
 
         $this->indexAction();
         $this->render('index');
-        */
     }
 }

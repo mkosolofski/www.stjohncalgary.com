@@ -1,10 +1,15 @@
 <?php $controllerName = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();?>
 <nav>
     <h1>Admin Menu</h1>
+    <h2>Internal</h2>
     <ul>
         <li onclick="window.location = '/admin/index'"
             class="<?php if (strtolower($controllerName)== 'index') : echo 'navSelect'; endif;?>" >
-            Admin Main
+            Main
+        </li>
+        <li onclick="window.location = '/admin/misc/content'"
+            class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
+            Content
         </li>
         <li onclick="window.location = '/admin/home_event'"
             class="<?php if (strtolower($controllerName)== 'home_event') : echo 'navSelect'; endif;?>" >
@@ -22,14 +27,22 @@
             class="<?php if (strtolower($controllerName)== 'content') : echo 'navSelect'; endif;?>" >
             Upload Files
         </li>
-        <li onclick="window.location = '/admin/misc/registeredemail'"
-            class="<?php if (strtolower($controllerName)== 'registeredemail') : echo 'navSelect'; endif;?>" >
-            Registered Email
-        </li>
-        <li onclick="window.location = '/admin/misc/email'"
-            class="<?php if (strtolower($controllerName)== 'email') : echo 'navSelect'; endif;?>" >
-            Admin Accounts
+        <li onclick="window.location = '/admin/user/manage'"
+            class="<?php if (strtolower($controllerName)== 'user') : echo 'navSelect'; endif;?>" >
+            Accounts
         </li>
     </ul>
-    <a href="/admin/index/logout" class="logout">Log Out</a>
+    <h2>External</h2>
+    <ul>
+        <li onclick="window.open('https://login.mailchimp.com/')">
+            Registered Email
+        </li>
+        <li onclick="window.open('https://signin.ebay.com/ws/eBayISAPI.dll?SellItem')">
+            Ebay - Donations
+        </li>
+        <li onclick="window.open('https://my.justhost.com/cgi-bin/cplogin')">
+            Web Host
+        </li>
+    </ul>
+    <a href="/admin/user/logout" class="logout">Log Out</a>
 </nav>

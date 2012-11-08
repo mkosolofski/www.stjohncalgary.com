@@ -9,97 +9,38 @@
                 <file>Home - _services.phtml</file>
             </partials>
         </home>
-        <services>
-            <label>Services</label>
-            <uri>/</uri>            
-            <partials>
-                <file>Services - services.phtml</file>
-            </partials>
+        <aboutus>
+            <label>About Us</label>
+            <uri></uri>
             <pages>
-                <wedding>
-                    <label>Wedding</label>
-                    <uri>/</uri>
-                    <partials>
-                        <file>Wedding - wedding.phtml</file>
-                    </partials>
-                    <pages>
-                        <prices>
-                            <label>Prices</label>
-                            <uri>/</uri>
-                            <partials>
-                                <file>Prices - prices.phtml</file>
-                            </partials>
-                            <pages>
-                                <good>
-                                    <label>Good</label>
-                                    <uri>/</uri>
-                                    <partials>
-                                        <file>Good - good.phtml</file>
-                                    </partials>
-                                </good>
-                                <crappy>
-                                    <label>Crappy</label>
-                                    <uri>/</uri>
-                                    <partials>
-                                        <file>Crappy - crappy.phtml</file>
-                                    </partials>
-                                </crappy>
-                            </pages>
-                        </prices>
-                        <donation>
-                            <label>Donation</label>
-                            <uri>/</uri>
-                            <partials>
-                                <file>Donation - donation.phtml</file>
-                            </partials>
-                        </donation>
-                        <clothing>
-                            <label>Clothing</label>
-                            <uri>/</uri>
-                            <partials>
-                                <file>Clothing - clothing.phtml</file>
-                            </partials>
-                        </clothing>
-                        <flowers>
-                            <label>Flowers</label>
-                            <uri>/</uri>
-                            <partials>
-                                <file>Flowers - flowers.phtml</file>
-                            </partials>
-                        </flowers>
-                    </pages>
-                </wedding>
-                <funeral>
-                    <label>Funeral</label>
-                    <uri>/</uri>
-                    <partials>
-                        <file>Funeral - funeral.phtml</file>
-                    </partials>
-                </funeral>
-                <baptism>
-                    <label>Baptism</label>
-                    <uri>/</uri>
-                    <partials>
-                        <file>Baptism - past.phtml</file>
-                        <file>Baptism - future.phtml</file>
-                    </partials>
-                </baptism>
+                <history>
+                    <label>History</label>
+                    <uri>/about-us/history</uri>
+                </history>
+                <pastorspage>
+                    <label>Pastor's Page</label>
+                    <uri>/about-us/pastors-page</uri>
+                </pastorspage>
+                <community>
+                    <label>Community</label>
+                    <uri>/about-us/community</uri>
+                </community>
+                <contactus>
+                    <label>Contact</label>
+                    <uri>/about-us/contact-us</uri>
+                </contactus>
             </pages>
-        </services>
-        <calendar>
-            <label>Calendar</label>
-            <partials>
-                <file>Calendar - calendar.phtml</file>
-           </partials>
+        </aboutus>
+        <ministries>
+            <label>Ministries</label>
             <uri>/</uri>
-        </calendar>
-        <news>
-            <label>News</label>
-            <partials>
-                <file>News - news.phtml</file>
-            </partials>
-            <uri>/</uri>
-        </news>
+            <pages>
+                <education>
+                    <label>Education</label>
+                    <uri>/ministries/education</uri>
+                </education>
+            </pages>
+        </ministries>
         <donate>
             <label>Donate</label>
             <partials>

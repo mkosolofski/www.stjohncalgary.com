@@ -21,7 +21,7 @@ class Password
      */
     public function encrypt($password)
     {
-        return $this->_encrypt($password, substr(md5(time()), 10, 4));
+        return $this->_encrypt($password, $this->_generateSalt());
     }
 
     /**
@@ -33,7 +33,30 @@ class Password
      */
     public function isEqual($password, $encryptedPassword)
     {
-        return ($encryptedPassword == $this->_encrypt($password, substr($encryptedPassword, 28, 4)));
+        return ($encryptedPassword == $this->_encrypt($password, substr($encryptedPassword, 25, 7)));
+    }
+
+    /**
+     * Generates a random password.
+     * 
+     * @return string The generated password.
+     */
+    public function generate()
+    {
+        return $this->encrypt(
+            substr(md5(time() + mt_rand(1, 1000)), 10, 8),
+            $this->_generateSalt()
+        );
+    }
+
+    /**
+     * Generates a random 7 character salt for the password.
+     * 
+     * @return string The salt.
+     */
+    protected function _generateSalt()
+    {
+        return substr(md5(time() + mt_rand(1000, 100000)), 10, 7);
     }
 
     /**
@@ -45,6 +68,6 @@ class Password
      */
     protected function _encrypt($password, $salt)
     {
-        return substr(md5($salt . $password), 0, 28) . $salt;
+        return substr(md5($salt . $password), 0, 25) . $salt;
     }
 }

@@ -8,13 +8,16 @@
     <form method="post" action="/admin/home_news/create"/>
         <label for="newsTitle">Title</label>
         <br/>
-        <input type="text" id="newsTitle" name="newsTitle" value="<?php echo htmlentities($this->formValues['newsTitle']);?>"/>
+        <input type="text" id="newsTitle" name="newsTitle" value="<?php echo htmlentities($this->formValues['newsTitle']);?>" maxlength="100"/>
         <br/>
-        <label for="newsBody">Body</label>
+        <label for="newsBody">Body (<a href="http://www.bbcode.org/" target="blank">bbcode</a>) </label>
         <br/>
-        <textarea id="newsBody" name="newsBody" rows="4" maxlength="200"><?php echo htmlentities($this->formValues['newsBody']);?></textarea>
+        <textarea id="newsBody" name="newsBody" rows="4" maxlength="20000"><?php echo htmlentities($this->formValues['newsBody']);?></textarea>
+        <div id="newsBodyPreview" style="display:none"></div>
         <br/>
         <input type="submit" value="Add"/>
+        <input type="button" id="previewButton" value="preview" onclick="Admin_Home_News.showPreview()" style="margin-left:10px"/>
+        <input type="button" id="editButton" value="edit" onclick="Admin_Home_News.hidePreview()" style="display:none;margin-left:10px"/>
     </form>
 </section>
 <section class="newsAdmin">
@@ -25,21 +28,21 @@
         <h1>Active</h1>
         (<a href="/admin/home_news?archived=1">view archived</a>)
     <?php endif;?>
-    <div>
+    <section class="news">
     <?php
-    /*
         foreach ($this->news as $item) :
             echo $this->partial(
                 'home/_news.phtml',
                 array(
                     'news' => $item,
                     'appendHTML' => '
-                        <br/>
-                        <a href="/admin/home_event/archive?id=' . $event->id . '&archived=' . $this->archived .'">archive</a>
+                        <div style="text-align: right">
+                            <a href="javascript:Admin_Home_News.deleteNews(' . $item->id . ',' . (int)$this->archived . ');">delete</a>
+                        </div>
                     '
                 )
             );
-        endforeach;*/
+        endforeach;
     ?>
-    </div>
+    </section>
 </section>

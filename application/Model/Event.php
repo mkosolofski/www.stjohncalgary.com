@@ -37,7 +37,7 @@ class Event extends Abstrct
     protected $created;
 
     /**
-     * @Column(type="integer",length=1)
+     * @Column(type="smallint",length=1)
      * @GeneratedValue
      */
     protected $isDeleted = 0;
@@ -47,5 +47,5 @@ class Event extends Abstrct
      * 
      * @var array
      */
-    protected $_setableFields = array('event', 'is_archived', 'date', 'isDeleted');
+    protected $_setableFields = array('event', 'date', 'isDeleted');
 }

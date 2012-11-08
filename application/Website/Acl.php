@@ -36,9 +36,7 @@ class Acl
         self::ROLE_MEMBER => array(
         ),
         self::ROLE_ADMIN => array(
-            'admin:index:*',
-            'admin:home:*',
-            'admin:misc:*'
+            'admin:*:*'
         )
     );
 

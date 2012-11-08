@@ -86,6 +86,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'host' => $connectionSettings['conn']['host']
         );
         $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
+        $entityManager->getEventManager()
+            ->addEventListener(
+                \Doctrine\ORM\Events::onFlush,
+                new \Website\Doctrine\EventListener()
+            );
 
         // Push the entity manager into our registry for later use
         Zend_Registry::getInstance()->entityManager = $entityManager;
