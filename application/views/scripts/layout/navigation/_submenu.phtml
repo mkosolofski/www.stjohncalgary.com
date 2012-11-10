@@ -3,10 +3,9 @@
         <?php
             if (empty($this->page->pages)) :
                 echo $this->menu()->htmlify($this->page);
-            else :
-                echo htmlentities($this->page);
-            endif;
-        ?>
+            else :?>
+                <span><?php echo htmlentities($this->page);?></span>
+        <?php endif;?>
     </div>
 </dt>
 <?php if (!empty($this->page->pages)) : ?>

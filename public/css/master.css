@@ -81,12 +81,14 @@ nav dl {
     -khtml-border-radius: 7px; /* for old Konqueror browsers */
 }
 
-nav dt div a {
+nav dt div a, nav dt div span {
     color: #404d91;
     padding-left: 5px;
+    text-decoration: none;
 }
 
 nav dt div {
+    color: #404d91;
     width: 100%;
     padding: 2px 4px 2px 2px;
     margin-left: -4px;
@@ -107,9 +109,13 @@ nav dt div:hover, .navSelectItem {
 nav dt {height: 20px;}
 
 /* Position the sub menu pop up*/
-nav dd dl {
-    margin: -16px 0 0 30px;
+nav dd {
+    top: -15px;
+    left: -10px;
+    position: relative;
+    float: right;
 }
+
 
 /********************
  * Navigation End
