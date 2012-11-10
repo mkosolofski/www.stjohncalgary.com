@@ -1,14 +1,23 @@
-<h1>Select a file to upload</h1>
-<form enctype="multipart/form-data" action="/admin/file/upload" method="POST">
-    <input type="hidden" name="MAX_FILE_SIZE" value="524288" />
-        Choose a file to upload: <input name="uploadedfile" type="file" />
-    <br />
-    <input type="submit" value="Upload File" />
-</form>
-<div>
-    <br/><br/>
-    <h1>Click on a file to remove it</h1>
-        <?php foreach($this->images as $value) : ?>
-            <div onclick="removeImage('<?php echo $value;?>')" class="image" style="color: blue; cursor: pointer;"><?php echo $value;?></div>
-        <?php endforeach?>
-</div>
+<section>
+    <h1>New</h1>
+<?php if (isset($this->uploadErrors)): ?>
+    <div class="error">
+        <?php foreach($this->uploadErrors as $error): ?>
+                <?php echo htmlentities($error);?>
+                <br/>
+        <?php endforeach;?>
+    </div>
+<?php endif;?>
+    <form enctype="multipart/form-data" action="/admin/file/upload" method="POST">
+        <input name="file" id="file" type="file" onchange="this.form.submit();"/>
+        <input type="button" onclick="$('#file').click();" value="Upload Image"/>
+    </form>
+</section>
+<section>
+    <h1>Current</h1>
+<?php foreach($this->images as $value) : ?>
+    <div>
+        <a href="/images/dynamic/<?php echo htmlentities($value);?>" target="blank">/images/dynamic/<?php echo $value;?>
+    </div>
+<?php endforeach;?>
+</section>
