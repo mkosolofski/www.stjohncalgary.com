@@ -4,10 +4,6 @@
         <home>
             <label>Home</label>
             <uri>/</uri>
-            <partials>
-                <file>Home - _announcements.phtml</file>
-                <file>Home - _services.phtml</file>
-            </partials>
         </home>
         <aboutus>
             <label>About Us</label>
@@ -21,14 +17,11 @@
                     <label>Pastor's Page</label>
                     <uri>/about-us/pastors-page</uri>
                 </pastorspage>
-                <community>
-                    <label>Community</label>
-                    <uri>/about-us/community</uri>
-                </community>
                 <contactus>
                     <label>Contact</label>
                     <uri>/about-us/contact-us</uri>
                 </contactus>
+                    <!-- scripts/about-us/people.phtml -->
             </pages>
         </aboutus>
         <ministries>
@@ -37,15 +30,66 @@
             <pages>
                 <education>
                     <label>Education</label>
-                    <uri>/ministries/education</uri>
+                    <uri>/</uri>
+                        <pages>
+                           <educationLinks>
+                                <label>External Educational Links</label>
+                                <uri>/ministries_education/index</uri>
+                           </educationLinks>
+                           <HuffAndPuff>
+                                <label>Huff and Puff</label>
+                                <uri>/ministries_education/huff-and-puff</uri>
+                            </HuffAndPuff>
+                            <under100club>
+                                <label>Under 100 Club</label>
+                                <uri>/ministries_education/under-100-club</uri>
+                            </under100club>
+                            <womanbiblestudy>
+                                <label>Woman Bible Study</label>
+                                <uri>/ministries_education/woman-bible-study</uri>
+                            </womanbiblestudy>    
+                            <confirmation>
+                                <label>Confirmation and Educational Links</label>
+                                <uri>/ministries_education/confirmation</uri>
+                            </confirmation>                                                  
+                        </pages>
                 </education>
+                <missions>
+                    <label>Missions</label>
+                    <uri>/</uri>
+                        <pages>
+                            <acadiaplace>
+                                <label>Acadia Place</label>
+                                <uri>/ministries_missions/acadia-place</uri>
+                            </acadiaplace>
+                            <clwr>
+                                <label>CLWR</label>
+                                <uri>/ministries_missions/clwr</uri>
+                            </clwr>
+                        </pages>
+                </missions>
             </pages>
         </ministries>
+        <services>
+            <label>Services</label>
+            <uri>/</uri>
+                <pages>
+                    <baptism>
+                        <label>Baptism</label>
+                        <uri>/services/baptism</uri>
+                    </baptism> 
+                    <wedding>
+                        <label>Wedding</label>
+                        <uri>/services/wedding</uri>
+                    </wedding>  
+                    <funeral>
+                        <label>Funeral</label>
+                        <uri>/services/funeral</uri>
+                    </funeral>                                                         
+                </pages>
+        </services>
         <donate>
             <label>Donate</label>
-            <partials>
-                <file>Donate - donate.phtml</file>
-            </partials>
             <uri>/</uri>
         </donate>
     </nav>

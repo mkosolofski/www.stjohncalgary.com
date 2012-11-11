@@ -17,7 +17,10 @@ class Admin_ContentController extends Zend_Controller_Action
      */
     public function indexAction() {
     
-        $files = array('Worship Time' => 'index/index/_worshiptime.phtml');
+        $files = array('History' => 'about-us/history.phtml',
+                       'Contact Us' => 'about-us/contact-us.phtml',
+                       "Pastor's Page" => 'about-us/pastors-page.phtml',
+                      );
                        
         
         $rfiles = array();
