@@ -1,12 +1,12 @@
 <?php
 /**
- * Contains MiscController 
+ * Contains FileController 
  *
  * @package Controllers
  */
 
 /**
- * The misc controller.
+ * The file controller.
  * 
  * @package Controllers
  */
@@ -15,32 +15,65 @@ class Admin_FileController extends Zend_Controller_Action
     /**
      * The index action.
      */
-    public function indexAction() {
-        $files = array();
-        
-        //find image files
-        if ($handle = opendir(APPLICATION_PATH.'/../public/images/admin/')) {
+    public function indexAction()
+    {
+        $this->view->getHelper('headLink')->appendStylesheet('/css/admin/file/index.css');
+        $files = scandir(APPLICATION_PATH.'/../public/images/dynamic/'); 
+        unset($files[0]);
+        unset($files[1]);
+        $this->view->images = $files;
+    }
 
-        while (false !== ($entry = readdir($handle))) {
-                $files[] = $entry;
-        }
-        closedir($handle);
+    /**
+     * The file upload action.
+     */
+    public function uploadAction()
+    {
+        $adapter = new Zend_File_Transfer_Adapter_Http();
+        $adapter->addValidator('Count', false, array('min' =>1, 'max' => 1))
+            ->addValidator('IsImage', false, array('jpg', 'jpeg', 'png', 'gif'))
+            ->addValidator('Size', false, array('max' => '10MB'))
+            ->setDestination(APPLICATION_PATH.'/../public/images/dynamic/');
+
+        $fileInfo = $adapter->getFileInfo();
+        if ($adapter->isValid($fileInfo['file']['name'])) {
+            try {
+                $adapter->receive();
+            } catch (Zend_File_Transfer_Exception $e) {
+                $this->view->uploadErrors = array($e->getMessage());
+            }
+        } else {
+            $this->view->uploadErrors = $adapter->getMessages();
         }
         
-        $imageFiles = array();
-        //filter out non image files
-        foreach($files as $value){
-            if(strstr($value, '.gif') || strstr($value, '.jpg') || strstr($value, '.png'))
-                $imageFiles[] = $value;
+        if (!isset($this->view->uploadErrors)) {
+            $filePath = APPLICATION_PATH.'/../public/images/dynamic/' . $fileInfo['file']['name'];
+
+            // Resize the image.
+            $image = new Imagick($filePath);
+            $dimension = $image->getImageGeometry();
+            $maxDimesion = max($dimension['width'], $dimension['height']);
+            $maxTarget = 350;
+            $aspect = 1;
+
+            if ($maxDimesion > $maxTarget) {
+                $aspect = $maxTarget / $maxDimesion;
+            }
+
+            if ($aspect != 1) {
+               $image->resizeImage(
+                    $dimension['width'] * $aspect,
+                    $dimension['height'] * $aspect,
+                    Imagick::FILTER_LANCZOS,
+                    1
+                ); 
+                
+                $image->writeImage($filePath);
+                $image->destroy();
+            }
         }
-        
-        $this->view->getHelper('headScript')->appendFile('/js/admin/file/index.js');
-        $this->view->images = $imageFiles;
+
+        $this->indexAction();
+        $this->render('index');
     }
-    
-    public function uploadAction() {
-        Zend_Layout::getMvcInstance()->disableLayout();
-        $this->render('upload');
-    }
-    
 }
