@@ -1,32 +1,24 @@
 <?php
 /**
- * Contains IndexController 
+ * Contains Ministries_MissionsController 
  *
  * @package Controllers
  */
 
 /**
- * The index controller.
+ * The ministries missions controller.
  * 
  * @package Controllers
  */
 class Ministries_MissionsController extends Zend_Controller_Action
 {
     /**
-     * The index action.
+     * The acadia place page action.
      */
-    public function indexAction()
-    {
-    }
+    public function acadiaPlaceAction() {}
     
-    public function acadiaPlaceAction()
-    {
-        $this->render('acadia-place');
-    }
-    
-    public function clwrAction()
-    {
-        $this->render('clwr');
-    }
-
+    /**
+     * The clwr page action.
+     */
+    public function clwrAction() {}
 }

@@ -13,7 +13,7 @@
 class IndexController extends Zend_Controller_Action
 {
     /**
-     * The index action.
+     * The index page action.
      */
     public function indexAction()
     {

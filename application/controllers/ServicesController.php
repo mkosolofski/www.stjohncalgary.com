@@ -1,36 +1,29 @@
 <?php
 /**
- * Contains IndexController 
+ * Contains ServicesController 
  *
  * @package Controllers
  */
 
 /**
- * The index controller.
+ * The services controller.
  * 
  * @package Controllers
  */
 class ServicesController extends Zend_Controller_Action
 {
     /**
-     * The index action.
+     * The baptism page action. 
      */
-    public function indexAction()
-    {
-    }
+    public function baptismAction() {}
     
-    public function baptismAction()
-    {
-        $this->render('baptism');
-    }
+    /**
+     * The wedding page action. 
+     */
+    public function weddingAction() {}
     
-    public function weddingAction()
-    {
-        $this->render('wedding');
-    }
-    
-    public function funeralAction()
-    {
-        $this->render('funeral');
-    }
+    /**
+     * The funeral page action. 
+     */
+    public function funeralAction() {}
 }

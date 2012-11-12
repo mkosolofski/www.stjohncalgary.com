@@ -1,41 +1,34 @@
 <?php
 /**
- * Contains IndexController 
+ * Contains Ministries_EducationController 
  *
  * @package Controllers
  */
 
 /**
- * The index controller.
+ * The ministries education controller.
  * 
  * @package Controllers
  */
 class Ministries_EducationController extends Zend_Controller_Action
 {
     /**
-     * The index action.
+     * The huff and puff page action.
      */
-    public function indexAction()
-    {
-    }
+    public function huffAndPuffAction() {}
     
-    public function huffAndPuffAction()
-    {
-        $this->render('huff-and-puff');
-    }
-    
-    public function under100ClubAction()
-    {
-        $this->render('under-100-club');
-    }
+    /**
+     * The under 100 club page action.
+     */
+    public function under100ClubAction() {}
 
-    public function womanBibleStudyAction()
-    {
-        $this->render('woman-bible-study');
-    }
+    /**
+     * The woman bible study page action.
+     */
+    public function womanBibleStudyAction() {}
     
-    public function confirmationAction()
-    {
-        $this->render('confirmation');
-    }
+    /**
+     * The confirmation page action.
+     */
+    public function confirmationAction() {}
 }

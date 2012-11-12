@@ -21,7 +21,6 @@
                     <label>Contact</label>
                     <uri>/about-us/contact-us</uri>
                 </contactus>
-                    <!-- scripts/about-us/people.phtml -->
             </pages>
         </aboutus>
         <ministries>
