@@ -195,3 +195,23 @@ h1, h2, h3 {
     color: #143D66;   
 }
 
+/* Styles specific to layout.phtml */
+.layoutMarginImageLeft {
+    height: 100%;
+    position: absolute;
+    left: 2px;
+}
+
+.layoutMarginImageRight {
+    height: 100%;
+    position: absolute;
+    right: 2px;
+}
+
+.layoutContentMargin {
+    width: 745px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
