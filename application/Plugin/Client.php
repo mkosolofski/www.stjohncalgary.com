@@ -24,6 +24,7 @@ class Client extends \Zend_Controller_Plugin_Abstract
         $view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
         $view->headScript()->appendFile('/js/jquery.js');
         $view->headScript()->appendFile('/js/layout/nav.js');
+        $view->headScript()->appendFile('/js/layout/display.js');
         $view->headLink()->appendStylesheet('/css/master.css');
 
         $navigation = new \Zend_Navigation(
@@ -34,5 +35,9 @@ class Client extends \Zend_Controller_Plugin_Abstract
 
         $view->navigation($navigation);
         $view->navigation()->menu()->setPartial(array('layout/navigation/_menu.phtml', 'default'));
+
+        if ($request->getControllerName() == 'index') {
+            \Zend_Controller_Action_HelperBroker::getStaticHelper('Layout')->setLayout('home');
+        }
     }
 }
