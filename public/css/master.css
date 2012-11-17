@@ -40,13 +40,9 @@ nav {
     -khtml-border-radius: 7px; /* for old Konqueror browsers */
 }
 
-nav div{
-    float: left;
-}
+nav div{float: left}
 
-nav a {
-    text-decoration: none;
-}
+nav a {text-decoration: none}
 
 .navTopItem {
     line-height: 20px;
@@ -160,3 +156,42 @@ header img {
     -khtml-border-radius: 7px; /* for old Konqueror browsers */
     z-index: 0;
 }
+
+div.staticContent {
+    text-align: center;
+    width: 745px;
+}
+
+
+.staticContent img {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    -khtml-border-radius: 5px;
+
+}
+
+div.staticContentImg {
+    width: 194px;
+    height: 129px;
+    float: left;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+}
+
+.contact-us {
+    text-align: left;
+    padding: 5px;
+}
+.contact-us p {
+    font-size: 12px;
+    margin: 2px;
+}
+
+h1, h2, h3 {
+    color: #143D66;   
+}
+
