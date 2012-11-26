@@ -31,10 +31,6 @@
                     <label>Education</label>
                     <uri>/</uri>
                         <pages>
-                           <educationLinks>
-                                <label>External Educational Links</label>
-                                <uri>/ministries_education/index</uri>
-                           </educationLinks>
                            <HuffAndPuff>
                                 <label>Huff and Puff</label>
                                 <uri>/ministries_education/huff-and-puff</uri>
@@ -50,7 +46,7 @@
                             <confirmation>
                                 <label>Confirmation and Educational Links</label>
                                 <uri>/ministries_education/confirmation</uri>
-                            </confirmation>                                                  
+                            </confirmation>                                               
                         </pages>
                 </education>
                 <missions>
