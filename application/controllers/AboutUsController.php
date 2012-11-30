@@ -25,5 +25,8 @@ class AboutUsController extends Zend_Controller_Action
     /**
      * The contact us action. 
      */
-    public function contactUsAction() {}
+    public function contactUsAction()
+    {
+        $this->view->getHelper('headLink')->appendStylesheet('/css/about-us/contact-us.css');
+    }
 }

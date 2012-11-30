@@ -1,0 +1,18 @@
+.details {
+    margin-left: 204px;
+    border-left: 3px solid #143D66;
+    padding: 5px;
+}
+.details p {margin: 2px}
+.details section {padding-bottom: 25px}
+
+.map {
+    position: absolute;
+    width: 194px;
+    height: 129px;
+    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+}

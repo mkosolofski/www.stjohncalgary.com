@@ -157,52 +157,7 @@ header img {
     z-index: 0;
 }
 
-div.staticContent {
-    padding-top: 30px;
-    width: 745px;
-}
-
-.staticContent h1 {
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-.staticContent img {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-    -khtml-border-radius: 5px;
-}
-
-div.staticContentImg {
-    width: 194px;
-    height: 129px;
-    float: left;
-    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px; 
-    -khtml-border-radius: 6px;
-}
-
-.contact-us {
-    margin-right: 150px;
-    border-left: 3px solid #143D66;
-    float: right;
-    text-align: left;
-    padding: 5px;
-}
-.contact-us p {
-    font-size: 12px;
-    margin: 2px;
-}
-
-.contact-us section {
-    padding-bottom: 25px;
-}
-h1, h2, h3 {
-    color: #143D66;   
-}
+h1, h2, h3 {color: #143D66}
 
 /* Styles specific to layout.phtml */
 .contentRight, .contentLeft {
@@ -223,5 +178,17 @@ h1, h2, h3 {
     margin-right: auto;
     height: 100%;
     position: relative;
+    padding-top: 30px;
 }
 
+.contentCenter h1 {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.contentCenter img {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    -khtml-border-radius: 5px;
+}
