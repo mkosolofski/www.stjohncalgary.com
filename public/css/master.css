@@ -191,27 +191,26 @@ div.staticContentImg {
     margin: 2px;
 }
 
-h1, h2, h3 {
-    color: #143D66;   
-}
+h1, h2, h3 {color: #143D66;}
 
 /* Styles specific to layout.phtml */
-.layoutMarginImageLeft {
+.contentRight, .contentLeft {
     height: 100%;
     position: absolute;
-    left: 2px;
+    opacity:0.1;
+    filter:alpha(opacity:0.1);
+    text-align: center;
 }
+.contentLeft {left: 2px;}
+.contentLeft img {margin-top: 10%}
+.contentRight {right: 2px;}
+.contentRight img {margin-top: 70%}
 
-.layoutMarginImageRight {
-    height: 100%;
-    position: absolute;
-    right: 2px;
-}
-
-.layoutContentMargin {
-    width: 745px;
+.contentCenter {
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+    position: relative;
 }
 

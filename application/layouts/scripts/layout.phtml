@@ -13,9 +13,9 @@
                 <?php echo $this->navigation()->menu();?>
             </header>
             <div class="content">
-                <div class="layoutMarginImageLeft"></div>
-                <div class="layoutMarginImageRight"></div>
-                <div class="layoutContentMargin">
+                <div class="contentLeft"><?php echo $this->layout_RandomImage();?></div>
+                <div class="contentRight"><?php echo $this->layout_RandomImage();?></div>
+                <div class="contentCenter">
                 <?php echo $this->layout()->content;?>
                 </div>
             </div>
