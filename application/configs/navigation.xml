@@ -18,7 +18,7 @@
                     <uri>/about-us/pastors-page</uri>
                 </pastorspage>
                 <contactus>
-                    <label>Contact</label>
+                    <label>Contact Us</label>
                     <uri>/about-us/contact-us</uri>
                 </contactus>
             </pages>
@@ -45,7 +45,7 @@
                             </womanbiblestudy>    
                             <confirmation>
                                 <label>Confirmation and Educational Links</label>
-                                <uri>/ministries_education/confirmation</uri>
+                                <uri>/ministries_education/confirmation-and-educational-links</uri>
                             </confirmation>                                               
                         </pages>
                 </education>
