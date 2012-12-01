@@ -22,6 +22,8 @@ h2 {
     font-size: 1.1em;
 }
 
+h1, h2, h3 {color: #404d91}
+
 /********************
  * Navigation
  *******************/
@@ -53,14 +55,14 @@ nav a {text-decoration: none}
     margin-bottom: -2px;
     padding: 0 9px 0 9px;
     cursor: pointer;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; /* future proofing */
-    -khtml-border-radius: 5px; /* for old Konqueror browsers */
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; /* future proofing */
+    -khtml-border-radius: 3px; /* for old Konqueror browsers */
 }
 
 .navTopItemSelect {
-    background-color: #fff;
+    background-color: #F4F5F9;
     color: #404d91;
 }
 
@@ -98,7 +100,7 @@ nav dt div {
 nav dt div:hover, .navSelectItem {
     position: absolute;
     border: #6e7cc4 1px solid;
-    background-color: #C3C8DE;
+    background-color: #F4F5F9;
     cursor: pointer;
     color: #404d91;
 }
@@ -157,8 +159,6 @@ header img {
     z-index: 0;
 }
 
-h1, h2, h3 {color: #143D66}
-
 /* Styles specific to layout.phtml */
 .contentRight, .contentLeft {
     height: 100%;
@@ -191,4 +191,17 @@ h1, h2, h3 {color: #143D66}
     -webkit-border-radius: 5px;
     border-radius: 5px; 
     -khtml-border-radius: 5px;
+}
+
+/* Social icons */
+.facebookIcon {
+    position:absolute;
+    right:45px;
+    top:52px;
+}
+
+.twitterIcon {
+    position:absolute;
+    right:10px;
+    top:52px;
 }
