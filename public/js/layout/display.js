@@ -11,23 +11,20 @@ var layout_display = {
      */
     resize:function()
     {
+        if ($('.contentLeft').length > 0) {
+            if ($('.content').width() > 980) {
+                $('.contentLeft, .contentRight').css(
+                    'width',
+                    ($('.content').width() - $('.contentCenter').width()) / 2
+                );
+            } else {
+                $('.contentLeft, .contentRight').css('width', '');
+            }
+        }
+        
         $('.layoutBackground')
             .width($('.content')[0].clientWidth - 2)
             .height($('.content')[0].scrollHeight + 50);
-
-        if ($('.layoutMarginImageLeft').length > 0 ) {
-            var contentWidth = $('.content')[0].clientWidth;
-            
-            if (contentWidth >= 950) {
-                var imageWidth = ((contentWidth - 745)/2) - 3;
-                console.log(imageWidth);
-                $('.layoutMarginImageLeft,.layoutMarginImageRight').css('width', imageWidth);
-                $('.layoutMarginImageLeft,.layoutMarginImageRight').show();
-            
-            } else {
-                $('.layoutMarginImageLeft,.layoutMarginImageRight').hide();
-            }
-        }
     }
 }
 $(window).load(layout_display.resize);

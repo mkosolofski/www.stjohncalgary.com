@@ -13,7 +13,7 @@
     -khtml-border-radius: 6px;
     padding: 15px 5px 5px 5px;
     border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
-    box-shadow: inset 0 0 10px #6E7CC4;
+    background-color: #F4F5F9;
 }
 
 .events {margin-top: 23px}

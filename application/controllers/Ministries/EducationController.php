@@ -28,7 +28,7 @@ class Ministries_EducationController extends Zend_Controller_Action
     public function womanBibleStudyAction() {}
     
     /**
-     * The confirmation page action.
+     * The confirmation and educational links page action.
      */
-    public function confirmationAction() {}
+    public function confirmationAndEducationalLinksAction() {}
 }

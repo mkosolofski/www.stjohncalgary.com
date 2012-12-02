@@ -1,8 +1,13 @@
 .news img {margin-top: 10px}
 
 .news article {
-    border-bottom: 1px dotted #6E7CC4;
     margin-bottom: 6px;
+    background-color: #F4F5F9;
+    padding: 5px 7px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
 }
 
 .news h2 {
