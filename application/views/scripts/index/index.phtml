@@ -53,6 +53,9 @@
                         P: (403) 262-2862
                         <br/>
                         E: <a href="mailto:stjohnlc@telus.net">stjohnlc@telus.net</a>
+                        <br/>
+                        <br/>
+                        <a href="/about-us/contact-us">see more...</a>
                     </div>
                 </div>
             </div>
@@ -61,17 +64,19 @@
             <div style="text-align:center;margin:15px;">
                 <img src="/images/index/index/welcome_to_st_john.png" alt="Welcome To St. John"/>
             </div>
-            <div id="slides">
-                <div class="slides_container">
-                    <div>
-                        <img src="/images/index/index/slideshow/a.jpg" alt="Image a">
-                    </div>
-                    <div>
-                        <img src="/images/index/index/slideshow/b.jpg" alt="Image b">
+            <div>
+                <div id="slides">
+                    <div class="slides_container">
+                        <div>
+                            <img src="/images/index/index/slideshow/a.jpg" alt="Image a">
+                        </div>
+                        <div>
+                            <img src="/images/index/index/slideshow/b.jpg" alt="Image b">
+                        </div>
                     </div>
                 </div>
+                <?echo $this->partial('index/index/_welcome.phtml');?>
             </div>
-            <?echo $this->partial('index/index/_welcome.phtml');?>
             <section class="news">
                 <img src="/images/index/index/news.png" alt="News"/>
                 <?php

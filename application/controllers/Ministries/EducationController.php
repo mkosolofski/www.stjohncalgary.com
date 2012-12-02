@@ -15,7 +15,13 @@ class Ministries_EducationController extends Zend_Controller_Action
     /**
      * The huff and puff page action.
      */
-    public function huffAndPuffAction() {}
+    public function huffAndPuffAction() {
+        
+        $this->view->getHelper('headLink')->appendStylesheet('/css/minitries/education/huff-and-puff.css');
+        $this->view->getHelper('headScript')->appendFile('/js/slideshow.js');
+        $this->view->getHelper('headScript')->appendFile('/js/ministries/education/huff-and-puff/index.js');
+        
+    }
     
     /**
      * The under 100 club page action.
