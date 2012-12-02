@@ -1,0 +1,9 @@
+/* Picture Slide Styles */
+#slides {
+    float: left;
+    margin-right: 10px;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
