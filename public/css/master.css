@@ -174,7 +174,7 @@ div.staticContent {
     -khtml-border-radius: 5px;
 }
 
-div.staticContentImg {
+a.staticContentImg {
     width: 194px;
     height: 129px;
     float: left;
@@ -186,7 +186,6 @@ div.staticContentImg {
 }
 
 .contact-us {
-    margin-right: 150px;
     border-left: 3px solid #143D66;
     float: right;
     text-align: left;
@@ -222,5 +221,10 @@ h1, h2, h3 {
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+}
+.middle {
+    margin-left: 150px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
