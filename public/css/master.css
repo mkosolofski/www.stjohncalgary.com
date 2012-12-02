@@ -125,7 +125,6 @@ nav dd {
 /********************
  * Navigation End
  *******************/
-
 .layout {
     margin-top: 10px;
     margin-left: auto;
@@ -149,6 +148,15 @@ header {
 header img {
     position: absolute;
     left: -20px
+}
+
+footer {
+    position: absolute;
+    bottom: -25px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 0.9em;
 }
 
 .layoutBackground {
@@ -189,7 +197,7 @@ header img {
 }
 
 .contentCenter h1 {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     text-align: center;
 }
 

@@ -83,9 +83,9 @@
                     </funeral>                                                         
                 </pages>
         </services>
-        <donate>
-            <label>Donate</label>
-            <uri>/</uri>
-        </donate>
+        <giving>
+            <label>Giving</label>
+            <uri>/giving</uri>
+        </giving>
     </nav>
 </configdata>
