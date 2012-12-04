@@ -9,7 +9,10 @@
     <body>
         <div class="layout">
             <?php echo $this->partial('layout/_header.phtml');?>
-            <div class="content"><?php echo $this->layout()->content;?></div>
+            <div class="content">
+                <div class="contentRight"><?php echo $this->layout_RandomImage();?></div>
+                <div class="contentCenter"><?php echo $this->layout()->content;?></div>
+            </div>
             <div class="layoutBackground"><?php echo $this->partial('layout/_footer.phtml');?></div>
         </div>
     </body>

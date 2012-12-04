@@ -38,6 +38,7 @@ class Client extends \Zend_Controller_Plugin_Abstract
 
         if ($request->getControllerName() == 'index') {
             \Zend_Controller_Action_HelperBroker::getStaticHelper('Layout')->setLayout('home');
+            $view->headLink()->appendStylesheet('/css/layout/home.css');
         }
     }
 }

@@ -1,0 +1,7 @@
+.contentCenter {
+    width: auto;
+    max-width: 900px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.contentRight img {margin-top: 100%}
