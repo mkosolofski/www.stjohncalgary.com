@@ -24,6 +24,8 @@ h2 {
 
 h1, h2, h3 {color: #404d91}
 
+a {text-decoration:none}
+
 /********************
  * Navigation
  *******************/
@@ -196,16 +198,18 @@ footer {
     padding-top: 30px;
 }
 
-.contentCenter h1 {
-    padding-bottom: 10px;
-    text-align: center;
-}
+.contentCenter h1 {text-align: center;}
 
 .contentCenter img {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
     -khtml-border-radius: 5px;
+}
+
+.pictureFloatLeft {
+    float: left;
+    margin-right: 10px;
 }
 
 /* Social icons */
@@ -221,7 +225,24 @@ footer {
     top:52px;
 }
 
-/* Pictures Slides Styles */
+/* Picture partial styles */
+.pictureContainer {
+    display: inline-block;
+    border: 1px solid #6E7CC4;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; 
+    -khtml-border-radius: 6px;
+}
+.pictureContainer img {
+    margin-bottom: -3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    -khtml-border-radius: 5px;
+}
+
+/* Slide Styles */
 #slides {
     text-align: center;
 }
@@ -234,7 +255,7 @@ footer {
 .slides_container {
     width: 260px;
     height: 200px;
-    border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
+    border: 1px solid #6E7CC4;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px; 
@@ -245,7 +266,6 @@ footer {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
     -khtml-border-radius: 5px;
-
 }
 .slides_container div {
     width: 260px;

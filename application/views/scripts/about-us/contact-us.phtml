@@ -1,45 +1,40 @@
-<h1>
+<h1 style="margin-bottom:12px">
     <img src="/images/about-us/contact-us/contact_us.png" alt="Contact Us"/>
 </h1>
-<div> 
-    <div class="map">
-            <a href="http://www.google.ca/local?hl=en&lr=&q=St+John+Lutheran&near=Calgary,+AB&latlng=51039877,-114080796,5519230273787071585" target="blank"><img src="/images/dynamic/directions2.jpg" alt="Map"/></a>
-    </div>
-    <div class="details">
-        <section>
-            <h2>Address</h2>
-            <p>
-                204 6a Street NE<br/>
-                Calgary, AB T2E_4A5<br/>
-                <br/>
-                <em>Find us @ Corner of 1st Avenue and 6A St</em>
-            </p>
-        </section>
-        <section>
-            <h2>Phone</h2>
-            <p>
-                (403) 262-2862
-            </p>
-        </section>
-        <section>
-            <h2>Email</h2>
-            <p>
-                Email us @: stjohnlc@telus.net
-            </p>
-        </section>
-        <section>
-            <h2>Staff</h2>
-            <p>
-                Pastor: The Rev. Arnold Alksne<br/>
-                Organist and Choir Director: Alma Sloboda<br/>
-                Chairperson: Yvette Straub<br/>
-                Secretary: Earl Olson<br/>
-                Financial Secretary/Administrative Assistant: Dorothy Schumaker<br/>
-            </p>
-        </section>
-        <section>
-            <h2>Hours of Operation</h2>
-            <p>Monday-Friday: 9am to 5pm</p>
-        </section>
-    </div>
+<a href="https://maps.google.ca/maps?ie=UTF8&f=d&daddr=St.+John+Lutheran+Church,+204+6A+Street+Northeast,+Calgary,+AB&geocode=CQHq0ytW11e7FegDCwMd4cgz-SFhDKkesT6YTA&gl=CA&hl=en_uk" target="blank" class="map">
+    <?php echo $this->partial('layout/_picture.phtml', array('source' => '/images/about-us/contact-us/map.jpg', 'alt' => 'Map'));?>
+</a>
+<div class="details">
+    <section>
+        <h2>Address</h2>
+        <p>
+            204 6a Street NE<br/>
+            Calgary, AB<br/>
+            T2E 4A5
+        </p>
+    </section>
+    <section>
+        <h2>Phone</h2>
+        <p>(403) 262-2862</p>
+    </section>
+    <section>
+        <h2>Email</h2>
+        <p>
+            <a href="mailto:admin@stjohncalgary.com">admin@stjohncalgary.com</a>
+        </p>
+    </section>
+    <section>
+        <h2>Staff</h2>
+        <p>
+            Pastor: The Rev. Arnold Alksne<br/>
+            Organist and Choir Director: Alma Sloboda<br/>
+            Chairperson: Yvette Straub<br/>
+            Secretary: Earl Olson<br/>
+            Treasurer/Admin Assistant: Dorothy Schumaker<br/>
+        </p>
+    </section>
+    <section>
+        <h2>Office Hours</h2>
+        <p>Monday to Friday: 9am to 5pm</p>
+    </section>
 </div>

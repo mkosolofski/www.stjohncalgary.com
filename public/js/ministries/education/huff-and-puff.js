@@ -1,7 +1,7 @@
 /**
-*   initialize the slide show for the huff and puff page
-*/
-var Index_Index = {
+ * Initialize the slide show for the huff and puff page
+ */
+var Ministries_Education_HuffAndPuff = {
     /**
      * Initialize dynamics.
      */
@@ -24,4 +24,4 @@ var Index_Index = {
     }
 }
 
-$(document).ready(Index_Index.initialize);
+$(document).ready(Ministries_Education_HuffAndPuff.initialize);
