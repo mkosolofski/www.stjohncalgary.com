@@ -17,6 +17,8 @@ class IndexController extends Zend_Controller_Action
      */
     public function indexAction()
     {
+        $this->view->getHelper('headLink')->appendAlternate('/rss/events', 'application/rss+xml', 'St. John Events');
+        $this->view->getHelper('headLink')->appendAlternate('/rss/news', 'application/rss+xml', 'St. John News');
         $this->view->getHelper('headLink')->appendStylesheet('/css/index/index.css');
         $this->view->getHelper('headLink')->appendStylesheet('/css/index/index/event.css');
         $this->view->getHelper('headLink')->appendStylesheet('/css/index/index/news.css');

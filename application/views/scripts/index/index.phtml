@@ -9,7 +9,8 @@
     </div>
     <div>
         <div class="events"> 
-            <img src="/images/index/index/events.png" alt="Events"/>
+            <img src="/images/index/index/events.png" alt="Events" class="eventsTitle"/>
+            <a href="/rss/events" target="blank"><img src="/images/index/index/rss.png" alt="RSS" class="eventsRss"/></a>
             <div>
                 <div style="height:200px;overflow-y:auto;">
                 <?php
@@ -69,12 +70,21 @@
                 <div>
                     <img src="/images/index/index/slideshow/b.jpg" alt="Image b">
                 </div>
+                <div>
+                    <img src="/images/index/index/slideshow/c.jpg" alt="Image c">
+                </div>
+                <div>
+                    <img src="/images/index/index/slideshow/d.jpg" alt="Image d">
+                </div>
             </div>
         </div>
         <?echo $this->partial('index/index/_welcome.phtml');?>
     </div>
     <section class="news">
-        <img src="/images/index/index/news.png" alt="News"/>
+        <img src="/images/index/index/news.png" alt="News" class="newsTitle"/>
+        <div class="newsRss">
+            <a href="/rss/news" target="blank"><img src="/images/index/index/rss.png" alt="RSS"/></a>
+        </div>
         <?php
             foreach ($this->news as $article) :
                 echo $this->partial('index/index/_news.phtml', array('news' => $article));

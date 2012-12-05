@@ -1,7 +1,13 @@
-.events img {
+.eventsTitle {
      position: absolute;
      top: -18px;
      left: 4px;
+}
+
+.eventsRss {
+     position: absolute;
+     top: -9px;
+     left: 141px;
 }
 
 .events {
