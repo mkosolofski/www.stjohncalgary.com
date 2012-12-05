@@ -1,88 +1,84 @@
-<div>
+<div class="columnA">
     <div>
-        <div class="columnA">
-            <div>
-                <div class="worshipTime"> 
-                    <img src="/images/index/index/worship_time.png" alt="Worship Time"/>
-                    <div style="text-align:center;">
-                        <?echo $this->partial('index/index/_worshiptime.phtml');?>
-                    </div>
-                </div>
+        <div class="worshipTime"> 
+            <img src="/images/index/index/worship_time.png" alt="Worship Time"/>
+            <div style="text-align:center;">
+                <?echo $this->partial('index/index/_worshiptime.phtml');?>
             </div>
-            <div>
-                <div class="events"> 
-                    <img src="/images/index/index/events.png" alt="Events"/>
-                    <div>
-                        <div style="height:200px;overflow-y:auto;">
-                        <?php
-                            foreach ($this->events as $event) :
-                                echo $this->partial('index/index/_event.phtml', array('event' => $event));
-                            endforeach;
-                        ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="keepInTouch"> 
-                    <img src="/images/index/index/keep_in_touch.png" alt="Keep In Touch"/>
-                    <div style="text-align:center">
-                        Join our mailing list to keep informed of our latest announcements!
-                        <form action="http://stjohncalgary.us1.list-manage1.com/subscribe/post?u=d1ac68a47e4f603ad62c2fcf8&amp;id=3b34af7599" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-                            <label style="font-weight:bold">Email:</label>
-                            <input type="text" name="EMAIL" id="mce-EMAIL" style="width:120px">
-                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="contact"> 
-                    <img src="/images/index/index/contact.png" alt="Contact"/>
-                    <div style="text-align:center">
-                        <h2 style="padding:4px 0;">St. John Lutheran Church</h2>
-                        204 6a Street NE
-                        <br/>
-                        Calgary, AB T2E 4A5
-                        <br/>
-                        <a href="https://maps.google.ca/maps?ie=UTF8&f=d&daddr=St.+John+Lutheran+Church,+204+6A+Street+Northeast,+Calgary,+AB&geocode=CQHq0ytW11e7FegDCwMd4cgz-SFhDKkesT6YTA&gl=CA&hl=en_uk" target="blank">Directions</a>
-                        <br/>
-                        <br/>
-                        (403) 262-2862
-                        <br/>
-                        <a href="mailto:admin@stjohncalgary.com">admin@stjohncalgary.com</a>
-                        <br/>
-                        <br/>
-                        <a href="/about-us/contact-us">more info</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="columnB">
-            <div style="text-align:center;margin:15px;">
-                <img src="/images/index/index/welcome_to_st_john.png" alt="Welcome To St. John"/>
-            </div>
-            <div>
-                <div id="slides">
-                    <div class="slides_container">
-                        <div>
-                            <img src="/images/index/index/slideshow/a.jpg" alt="Image a">
-                        </div>
-                        <div>
-                            <img src="/images/index/index/slideshow/b.jpg" alt="Image b">
-                        </div>
-                    </div>
-                </div>
-                <?echo $this->partial('index/index/_welcome.phtml');?>
-            </div>
-            <section class="news">
-                <img src="/images/index/index/news.png" alt="News"/>
-                <?php
-                    foreach ($this->news as $article) :
-                        echo $this->partial('index/index/_news.phtml', array('news' => $article));
-                    endforeach;
-                ?>
-            </section>
         </div>
     </div>
+    <div>
+        <div class="events"> 
+            <img src="/images/index/index/events.png" alt="Events"/>
+            <div>
+                <div style="height:200px;overflow-y:auto;">
+                <?php
+                    foreach ($this->events as $event) :
+                        echo $this->partial('index/index/_event.phtml', array('event' => $event));
+                    endforeach;
+                ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="keepInTouch"> 
+            <img src="/images/index/index/keep_in_touch.png" alt="Keep In Touch"/>
+            <div style="text-align:center">
+                Join our mailing list to keep informed of our latest announcements!
+                <form action="http://stjohncalgary.us1.list-manage1.com/subscribe/post?u=d1ac68a47e4f603ad62c2fcf8&amp;id=3b34af7599" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                    <label style="font-weight:bold">Email:</label>
+                    <input type="text" name="EMAIL" id="mce-EMAIL" style="width:120px">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="contact"> 
+            <img src="/images/index/index/contact.png" alt="Contact"/>
+            <div style="text-align:center">
+                <h2 style="padding:4px 0;">St. John Lutheran Church</h2>
+                204 6a Street NE
+                <br/>
+                Calgary, AB T2E 4A5
+                <br/>
+                <a href="https://maps.google.ca/maps?ie=UTF8&f=d&daddr=St.+John+Lutheran+Church,+204+6A+Street+Northeast,+Calgary,+AB&geocode=CQHq0ytW11e7FegDCwMd4cgz-SFhDKkesT6YTA&gl=CA&hl=en_uk" target="blank">Directions</a>
+                <br/>
+                <br/>
+                (403) 262-2862
+                <br/>
+                <a href="mailto:admin@stjohncalgary.com">admin@stjohncalgary.com</a>
+                <br/>
+                <br/>
+                <a href="/about-us/contact-us">more info</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="columnB">
+    <h1>
+        <img src="/images/index/index/welcome_to_st_john.png" alt="Welcome To St. John"/>
+    </h1>
+    <div>
+        <div id="slides">
+            <div class="slides_container">
+                <div>
+                    <img src="/images/index/index/slideshow/a.jpg" alt="Image a">
+                </div>
+                <div>
+                    <img src="/images/index/index/slideshow/b.jpg" alt="Image b">
+                </div>
+            </div>
+        </div>
+        <?echo $this->partial('index/index/_welcome.phtml');?>
+    </div>
+    <section class="news">
+        <img src="/images/index/index/news.png" alt="News"/>
+        <?php
+            foreach ($this->news as $article) :
+                echo $this->partial('index/index/_news.phtml', array('news' => $article));
+            endforeach;
+        ?>
+    </section>
 </div>

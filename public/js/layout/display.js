@@ -20,17 +20,6 @@ var layout_display = {
             } else {
                 $('.contentLeft, .contentRight').css('width', '');
             }
-        } else {
-            console.log($('.content').width());
-            if ($('.content').width() > 1080) {
-                $('.contentRight').css(
-                    'width',
-                    ($('.content').width() - $('.contentCenter').width())
-                );
-                $('.contentRight').show();
-            } else {
-                $('.contentRight').hide();
-            }
         }
         
         $('.layoutBackground')

@@ -37,7 +37,6 @@ class Client extends \Zend_Controller_Plugin_Abstract
         $view->navigation()->menu()->setPartial(array('layout/navigation/_menu.phtml', 'default'));
 
         if ($request->getControllerName() == 'index') {
-            \Zend_Controller_Action_HelperBroker::getStaticHelper('Layout')->setLayout('home');
             $view->headLink()->appendStylesheet('/css/layout/home.css');
         }
     }
