@@ -39,10 +39,10 @@
                                 <label>Under 100 Club</label>
                                 <uri>/ministries_education/under-100-club</uri>
                             </under100club>
-                            <womanbiblestudy>
-                                <label>Woman Bible Study</label>
-                                <uri>/ministries_education/woman-bible-study</uri>
-                            </womanbiblestudy>    
+                            <womensgroup>
+                                <label>Women's Group</label>
+                                <uri>/ministries_education/womens-group</uri>
+                            </womensgroup>    
                             <confirmation>
                                 <label>Confirmation and Educational Links</label>
                                 <uri>/ministries_education/confirmation-and-educational-links</uri>

@@ -28,9 +28,9 @@ class Ministries_EducationController extends Zend_Controller_Action
     public function under100ClubAction() {}
 
     /**
-     * The woman bible study page action.
+     * The womens group page action.
      */
-    public function womanBibleStudyAction() {}
+    public function womensGroupAction() {}
     
     /**
      * The confirmation and educational links page action.

@@ -25,12 +25,29 @@ var layout_nav = {
         );
 
         // Set mouseover observers on each sub menu item.
+        // Fix submenu widths.
+        var widths = [];
         $('nav dt').each(
             function(index, element)
             {
                 $(element).mouseover(layout_nav.selectSubItem);
+
+                var parent = $(element).parent(),
+                    parentId = parent.attr('id');
+
+                if (!(parentId in widths)) widths[parentId] = 0;
+
+                parent.show().css('visibility','hidden');
+                
+                if (widths[parentId] < $(element).width()) {
+                    widths[parentId] = $(element).width();
+                    parent.css('width', widths[parentId])
+                }
             }
         );
+
+        // Remove added visibility tags from submenu width fix.
+        $('nav dt').parent().hide().css('visibility', '');
 
         // Set observer to focus away from the menu when clicked away from.
         $(document).click(

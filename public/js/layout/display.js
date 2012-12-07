@@ -9,7 +9,7 @@ var layout_display = {
     /**
      * Manipulates layout based on sizing of user browser.
      */
-    resize:function()
+    resize:function(event)
     {
         if ($('.contentLeft').length > 0) {
             if ($('.content').width() > 980) {
@@ -21,10 +21,21 @@ var layout_display = {
                 $('.contentLeft, .contentRight').css('width', '');
             }
         }
+
+        // If the content does not fit in the browser.
+        if ($(window).height() < $(document).height()) {
+            $('.layoutBackground').width($('.content')[0].clientWidth - 2)
+            if (event.type == 'load') {
+                $('.layoutBackground').height(($(document).height() - $('header').height()) + 35);
+            }
         
-        $('.layoutBackground')
-            .width($('.content')[0].clientWidth - 2)
-            .height($('.content')[0].scrollHeight + 50);
+        // Else if the content fits in the browser.
+        } else {
+            $('.layoutBackground').width($('.content')[0].clientWidth - 2)
+            if (event.type == 'load') {
+                $('.layoutBackground').height($('.content')[0].scrollHeight + 50);
+            }
+        }
     }
 }
 $(window).load(layout_display.resize);

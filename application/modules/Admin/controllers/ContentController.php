@@ -17,10 +17,23 @@ class Admin_ContentController extends Zend_Controller_Action
      */
     public function indexAction() {
     
-        $files = array('History' => 'about-us/history.phtml',
-                       'Contact Us' => 'about-us/contact-us.phtml',
-                       "Pastor's Page" => 'about-us/pastors-page.phtml',
-                      );
+        $files = array(
+            'Acadia Place' => 'ministries/missions/acadia-place.phtml',
+            'Baptism' => 'services/baptism.phtml',
+            'CLWR' => 'ministries/missions/clwr.phtml',
+            'Confirmation and Education' => 'ministries/education/confirmation-and-educational-links.phtml',
+            'Contact Us' => 'about-us/contact-us.phtml',
+            'Funeral' => 'services/funeral.phtml',
+            'Giving' => 'giving/index.phtml',
+            'History' => 'about-us/history.phtml',
+            'Huff and Puff' => 'ministries/education/huff-and-puff.phtml',
+            'Pastor\'s Page' => 'about-us/pastors-page.phtml',
+            'Under 100 Club' => 'ministries/education/under-100-club.phtml',
+            'Wedding' => 'services/wedding.phtml',
+            'Welcome' => 'index/index/_welcome.phtml',
+            'Women's Group' => 'ministries/education/womens-group.phtml',
+            'Worship Time' => 'index/index/_worshiptime.phtml'
+        );
                        
         
         $rfiles = array();
