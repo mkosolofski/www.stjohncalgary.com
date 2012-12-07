@@ -94,6 +94,9 @@ nav dt div a, nav dt div span {
     text-decoration: none;
 }
 
+/** Ensure that the ensure menu item acts as a link and not just around the text (includes white space) **/
+nav dt div a {display: block}
+
 nav dt div {
     color: #404d91;
     width: 100%;
