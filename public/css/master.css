@@ -3,11 +3,14 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    background: #a0a6ca  url('/images/layout/background.jpg') fixed no-repeat center;
-    background-size: 96% 100%;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 785px;
     font-size: 13px;
+}
+
+body {
+    background: #a0a6ca  url('/images/layout/background.jpg') fixed no-repeat center;
+    background-size: 96% 100%;
 }
 
 h1 {
@@ -23,8 +26,8 @@ h2 {
 }
 
 h1, h2, h3 {color: #404d91}
-
 a {text-decoration:none}
+img {border:0}
 
 /********************
  * Navigation
@@ -45,10 +48,13 @@ nav {
 }
 
 nav div{
+    width: 0; /* Dumb IE6 Hack. IE6 sets floated width to 100% */
     float: left;
+    white-space: nowrap;
 }
 
-nav a {text-decoration: none}
+/* Fix dub ie6 hack above for other browsers */
+nav>div{width: auto}
 
 .navTopItem {
     line-height: 20px;
@@ -91,7 +97,6 @@ nav dt div a, nav dt div span {
     white-space: nowrap;
     color: #404d91;
     padding-left: 5px;
-    text-decoration: none;
 }
 
 /** Ensure that the ensure menu item acts as a link and not just around the text (includes white space) **/
@@ -126,7 +131,7 @@ nav dd {
     float: right;
 }
 
-
+.navHidden{visibility:hidden}
 /********************
  * Navigation End
  *******************/
@@ -141,6 +146,7 @@ nav dd {
     position: relative;
     z-index: 2;
     top: -10px;
+    height: 100%;
 }
 .content {padding: 0 10px}
 
@@ -165,17 +171,18 @@ footer {
 }
 
 .layoutBackground {
+    height: 100%;
     top: 100px;
     background-color: #f4f5f9;
     border: 2px solid #d2d8f7;
-    opacity:0.8;
-    filter:alpha(opacity:0.8);
     position: absolute;
     border: #9ca2c6 solid 1px;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
-    border-radius: 7px; /* future proofing */
-    -khtml-border-radius: 7px; /* for old Konqueror browsers */
+    border-radius: 7px;
+    -khtml-border-radius: 7px;
+    opacity:0.8;
+    filter:alpha(opacity:80);
     z-index: 0;
 }
 
@@ -251,7 +258,6 @@ footer {
 }
 #slides a {
     margin-left: 10px;
-    text-decoration: none;
     color: #404D91;
     font-weight: bold;
 }
@@ -265,6 +271,8 @@ footer {
     -khtml-border-radius: 6px;
 }
 .slides_container img {
+    width: 260px;
+    height: 200px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; 

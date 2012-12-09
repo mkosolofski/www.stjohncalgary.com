@@ -9,8 +9,8 @@
     </div>
 </dt>
 <?php if (!empty($this->page->pages)) : ?>
-    <dd>
-        <dl style="display:none;" id="<?php echo $this->id;?>">
+    <dd style="display:none;">
+        <dl id="<?php echo $this->id;?>">
         <?php 
             $submenuCounter = 0;
             foreach ($this->page->pages as $subPage) :

@@ -1,7 +1,7 @@
 <div class="columnA">
     <div>
         <div class="worshipTime"> 
-            <img src="/images/index/index/worship_time.png" alt="Worship Time"/>
+            <img src="/images/index/index/worship_time.png" alt="Worship Time" width="144px" height="33px"/>
             <div style="text-align:center;">
                 <?echo $this->partial('index/index/_worshiptime.phtml');?>
             </div>
@@ -9,8 +9,8 @@
     </div>
     <div>
         <div class="events"> 
-            <img src="/images/index/index/events.png" alt="Events" class="eventsTitle"/>
-            <a href="/rss/events" target="blank"><img src="/images/index/index/rss.png" alt="RSS" class="eventsRss"/></a>
+            <img src="/images/index/index/events.png" alt="Events" class="eventsTitle" width="78px" height="35px"/>
+            <a href="/rss/events" target="blank"><img src="/images/index/index/rss.png" alt="RSS" class="eventsRss" width="18px" height="18px"/></a>
             <div>
                 <div style="height:200px;overflow-y:auto;">
                 <?php
@@ -24,7 +24,7 @@
     </div>
     <div>
         <div class="keepInTouch"> 
-            <img src="/images/index/index/keep_in_touch.png" alt="Keep In Touch"/>
+            <img src="/images/index/index/keep_in_touch.png" alt="Keep In Touch" width="150px" height="33px"/>
             <div style="text-align:center">
                 Join our mailing list to keep informed of our latest announcements!
                 <form action="http://stjohncalgary.us1.list-manage1.com/subscribe/post?u=d1ac68a47e4f603ad62c2fcf8&amp;id=3b34af7599" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
@@ -37,7 +37,7 @@
     </div>
     <div>
         <div class="contact"> 
-            <img src="/images/index/index/contact.png" alt="Contact"/>
+            <img src="/images/index/index/contact.png" alt="Contact" width="89px" height="38px"/>
             <div style="text-align:center">
                 <h2 style="padding:4px 0;">St. John Lutheran Church</h2>
                 204 6a Street NE
@@ -57,7 +57,7 @@
 </div>
 <div class="columnB">
     <h1>
-        <img src="/images/index/index/welcome_to_st_john.png" alt="Welcome To St. John"/>
+        <img src="/images/index/index/welcome_to_st_john.png" alt="Welcome To St. John" width="321px" height="42px"/>
     </h1>
     <div>
         <div id="slides">
@@ -79,10 +79,10 @@
         <?echo $this->partial('index/index/_welcome.phtml');?>
     </div>
     <section class="news">
-        <img src="/images/index/index/news.png" alt="News" class="newsTitle"/>
         <div class="newsRss">
-            <a href="/rss/news" target="blank"><img src="/images/index/index/rss.png" alt="RSS"/></a>
+            <a href="/rss/news" target="blank"><img src="/images/index/index/rss.png" alt="RSS" width="18px" height="18px"/></a>
         </div>
+        <img src="/images/index/index/news.png" alt="News" class="newsTitle" width="69px" height="36px"/>
         <?php
             foreach ($this->news as $article) :
                 echo $this->partial('index/index/_news.phtml', array('news' => $article));

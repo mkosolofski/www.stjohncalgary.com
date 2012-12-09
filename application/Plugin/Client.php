@@ -25,8 +25,14 @@ class Client extends \Zend_Controller_Plugin_Abstract
         $view->headScript()->appendFile('/js/jquery.js');
         $view->headScript()->appendFile('/js/layout/nav.js');
         $view->headScript()->appendFile('/js/layout/display.js');
-        $view->headLink()->appendStylesheet('/css/master.css');
 
+        // @todo IE6 displays conditional tags. Look into this further.
+        //$view->headScript()->appendFile('/js/ie_png_fix.js', 'text/javascript', array('conditional' => 'lt IE7'));
+        //$view->headScript()->appendFile('/js/ie_html5_fix.js', 'text/javascript', array('conditional' => 'lt IE9'));
+        //$view->headLink()->appendStylesheet('/css/master_ie6.css', 'screen', 'lt IE7');
+
+        $view->headLink()->appendStylesheet('/css/master.css');
+        
         $navigation = new \Zend_Navigation(
             new \Zend_Config_Xml(
                 APPLICATION_PATH . '/configs/navigation.xml', 'nav'

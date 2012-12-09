@@ -1,6 +1,6 @@
 .columnA {
+    left: 0;
     position: absolute;
-    width: 160px;
     margin-left: 5px;
 }
 .columnB {
@@ -24,13 +24,14 @@
     padding: 15px 5px 5px 5px;
     border: 1px solid #6E7CC4; /* Fallback if box-shadow not supported */
     background-color: #F4F5F9;
+    width: 145px;
 }
 
 .keepInTouch, .contact {margin-top: 23px}
 
 .worshipTime {
     margin-top: 15px;
-    background-image: url('/images/index/index/worship_time/background.png');
+    background-image: url('/images/index/index/worship_time/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
 }

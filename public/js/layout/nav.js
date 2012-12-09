@@ -12,6 +12,11 @@ var layout_nav = {
     timerId:null,
 
     /**
+     * Flag that is set when the user's mouse is hoverring over a menu item. 
+     */
+    mouseHover:false,
+
+    /**
      * Initializes the top nav with controlling logic. 
      */
     initialize:function()
@@ -21,23 +26,39 @@ var layout_nav = {
             function(index, element)
             {
                 $(element).mouseover(layout_nav.selectTopItem);
+                $(element).hover(
+                    function(event) {layout_nav.mouseHover = true},
+                    function(event) {layout_nav.mouseHover = false}
+                );
             }
         );
 
         // Set mouseover observers on each sub menu item.
         // Fix submenu widths.
+        $('nav dd,nav dl,nav dt').filter(
+            function() {return $(this).css('display') == 'none'}
+        ).each(
+            function() {$(this).show().addClass('navHidden');}
+        );
+
         var widths = [];
         $('nav dt').each(
             function(index, element)
             {
-                $(element).mouseover(layout_nav.selectSubItem);
+                $(element).hover(
+                    function(event) {
+                        layout_nav.selectSubItem(event);
+                        layout_nav.mouseHover = true;
+                    },
+                    function(event) {
+                        layout_nav.mouseHover = false;
+                    }
+                );
 
                 var parent = $(element).parent(),
                     parentId = parent.attr('id');
 
                 if (!(parentId in widths)) widths[parentId] = 0;
-
-                parent.show().css('visibility','hidden');
                 
                 if (widths[parentId] < $(element).width()) {
                     widths[parentId] = $(element).width();
@@ -46,21 +67,17 @@ var layout_nav = {
             }
         );
 
-        // Remove added visibility tags from submenu width fix.
-        $('nav dt').parent().hide().css('visibility', '');
+        $('.navHidden').each(
+            function() {$(this).hide().removeClass('navHidden')}
+        );
 
         // Set observer to focus away from the menu when clicked away from.
         $(document).click(
             function() {
-                $('nav *').each(
-                    function(index, element)
-                    {
-                        if (!$(element).is(':hover')) {
-                            window.clearTimeout(layout_nav.timerId); 
-                            layout_nav.unselectAll();
-                        }
-                    }
-                );
+                if (!layout_nav.mouseHover) {
+                    window.clearTimeout(layout_nav.timerId); 
+                    layout_nav.unselectAll();
+                }
             } 
         );
     },
@@ -74,20 +91,12 @@ var layout_nav = {
         window.clearTimeout(layout_nav.timerId); 
         layout_nav.timerId = window.setTimeout(
             function() {
-                var unselectAll = true;
-                $('nav *').each(
-                    function(index, element)
-                    {
-                        if ($(element).is(':hover')) {
-                            layout_nav.initTimer();
-                            unselectAll = false;
-                        }
-                    }
-                );
-
-                if (unselectAll) {
-                    layout_nav.unselectAll();
+                if (layout_nav.mouseHover) {
+                    layout_nav.initTimer();
+                    return;
                 }
+
+                layout_nav.unselectAll();
             },
             3000
         );
@@ -102,10 +111,15 @@ var layout_nav = {
         $('.navTopItemSelect').parent().find('dl').each(
             function()
             {
+                if ($(this).parent().is('dd')) {
+                    $(this).parent().fadeOut(150);
+                    return;
+                }
+
                 $(this).fadeOut(150);
             }
         );
-        
+
         // Unselect sub-menu items.
         $('.navSelectItem').each(
             function()
@@ -165,7 +179,7 @@ var layout_nav = {
             function()
             {
                 if (submenu == null || submenu.attr('id') != this.id) {
-                    $(this).fadeOut(150);
+                    $(this).parent().fadeOut(150);
                 }
             }
         );
@@ -184,8 +198,8 @@ var layout_nav = {
         target.children('div').first().addClass('navSelectItem');
 
         // Display the associated sub menu (if one exists).
-        if (submenu != null && !submenu.is(':visible')) {
-            submenu.fadeIn(150);
+        if (submenu != null && !submenu.parent().is(':visible')) {
+            submenu.parent().fadeIn(150);
         }
     }
 }
