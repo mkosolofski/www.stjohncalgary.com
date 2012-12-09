@@ -1,0 +1,14 @@
+.navTopItemSelect {
+    line-height: 20px;
+    height: 23px;
+    margin-top: 0;
+    background-color: #DCE0F5;
+    border: #bac0de 1px solid;
+    color: #404d91;
+}
+
+nav dt div {
+    color: #404d91;
+    width: 100%;
+    margin-left: -3px;
+}
