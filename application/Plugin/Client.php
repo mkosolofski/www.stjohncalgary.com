@@ -32,7 +32,9 @@ class Client extends \Zend_Controller_Plugin_Abstract
         //$view->headLink()->appendStylesheet('/css/master_ie6.css', 'screen', 'lt IE7');
 
         $view->headLink()->appendStylesheet('/css/master.css');
-        
+
+        $view->headTitle($request->getControllerName() . '/' . $request->getActionName());
+
         $navigation = new \Zend_Navigation(
             new \Zend_Config_Xml(
                 APPLICATION_PATH . '/configs/navigation.xml', 'nav'
