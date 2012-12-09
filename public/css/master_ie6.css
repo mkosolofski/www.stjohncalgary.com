@@ -16,5 +16,6 @@ nav dt div {
 /** float fix **/
 nav div, .pictureFloatLeft, .pictureContainer{width: 0}
 
-.contentLeft img {margin-top: 10%}
+.contentLeft img {margin-top: 5%}
 .contentRight img {margin-top: 30%}
+footer {bottom: -10px;}

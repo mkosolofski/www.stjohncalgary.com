@@ -1,0 +1,8 @@
+.contentLeft img {margin-top: 5%}
+.contentRight img {margin-top: 30%}
+
+.pictureContainer{
+    padding-bottom: 3px;
+    display: inline;
+}
+footer {bottom: -10px;}
