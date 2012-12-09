@@ -12,3 +12,9 @@ nav dt div {
     width: 100%;
     margin-left: -3px;
 }
+
+/** float fix **/
+nav div, .pictureFloatLeft, .pictureContainer{width: 0}
+
+.contentLeft img {margin-top: 10%}
+.contentRight img {margin-top: 30%}

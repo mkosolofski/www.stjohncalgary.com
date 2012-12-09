@@ -48,13 +48,9 @@ nav {
 }
 
 nav div{
-    width: 0; /* Dumb IE6 Hack. IE6 sets floated width to 100% */
     float: left;
     white-space: nowrap;
 }
-
-/* Fix dub ie6 hack above for other browsers */
-nav>div{width: auto}
 
 .navTopItem {
     line-height: 20px;
@@ -191,13 +187,13 @@ footer {
     height: 100%;
     position: absolute;
     opacity:0.1;
-    filter:alpha(opacity:0.1);
+    filter:alpha(opacity:10);
     text-align: center;
 }
 .contentLeft {left: 2px;}
-.contentLeft img {margin-top: 10%}
+.contentLeft img {margin-top: 20%}
 .contentRight {right: 2px;}
-.contentRight img {margin-top: 70%}
+.contentRight img {margin-top: 80%}
 
 .contentCenter {
     width: 600px;
