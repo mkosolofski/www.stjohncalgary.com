@@ -116,7 +116,7 @@ class Event
                 ->from('\Model\Event', 'e')
                 ->where('e.date >= CURRENT_TIMESTAMP()')
                 ->andWhere('e.isDeleted = 0')
-                ->orderBy('e.date', 'DESC')
+                ->orderBy('e.date', 'ASC')
                 ->getQuery()
                 ->execute()
         )->setResult(true);
