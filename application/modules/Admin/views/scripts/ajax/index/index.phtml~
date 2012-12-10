@@ -1,9 +1,0 @@
-<?php
-//use php to return javascript to ajax, but first just make it work
-
-  echo "<h2>$params['file']</h2>";
- //echo '$('#editContent').html';
- //$contents = $this->partial($this->params['file']);
- //echo $contents;
-
-?>

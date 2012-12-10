@@ -1,0 +1,32 @@
+<?php
+$content = new \Admin\Website\Content();
+$backup = new \Admin\Website\Content\Backup();
+
+// If this is a backup file.
+if ($backup->isBackupFile(basename($this->params['filePath'], '.phtml'))) {
+    // Save the live version to backup.
+    $handle = fopen($backup->getPath() . $this->params['filePath'], 'w+');
+    fwrite(
+        $handle,
+        file_get_contents($backup->getContentFilePath(basename($this->params['filePath'])))
+    );
+    fclose($handle);
+    
+    // Save the backup content to the live site.
+    $handle = fopen($backup->getContentFilePath(basename($this->params['filePath'])), 'w+');
+    fwrite($handle, $this->params['content']);
+    fclose($handle);
+    return;
+}
+
+// If this is a content file.
+
+// Create\update associated back up file.
+$handle = fopen($content->getBackupFilePath(basename($this->params['filePath'])), 'w+');
+fwrite($handle, file_get_contents($content->getPath() . $this->params['filePath']));
+fclose($handle);
+
+// Save file contents.
+$handle = fopen($content->getPath() . $this->params['filePath'], 'w+');
+fwrite($handle, $this->params['content']);
+fclose($handle);

@@ -1,0 +1,9 @@
+<?php 
+$backup = new \Admin\Website\Content\Backup();
+if ($backup->isBackupFile(basename($this->params['filePath']))) {
+    echo file_get_contents($backup->getPath() . $this->params['filePath']);
+    return;
+}
+
+$content = new \Admin\Website\Content();
+echo file_get_contents($content->getPath() . $this->params['filePath']);
