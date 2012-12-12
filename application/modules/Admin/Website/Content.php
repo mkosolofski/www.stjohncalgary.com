@@ -61,6 +61,7 @@ class Content
      * @var array
      */
     protected $_files = array(
+        'Test Page' => 'test/index.phtml',
         'Acadia Place' => 'ministries/missions/acadia-place.phtml',
         'Baptism' => 'services/baptism.phtml',
         'CLWR' => 'ministries/missions/clwr.phtml',
